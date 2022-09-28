@@ -1,1 +1,3 @@
-# Gloomhaven-Player-Helper-App
+Gloomhaven Player Helper App
+
+helper app
