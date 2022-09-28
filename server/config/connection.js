@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tech-friends',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gloomhaven-player-helper-app', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+});
 
 module.exports = mongoose.connection;
