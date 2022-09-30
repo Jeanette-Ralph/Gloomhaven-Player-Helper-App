@@ -22,6 +22,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+
     // set items, player_cards, character to be an array of data that adheres to the bookSchema
     characters: [
       {
@@ -29,12 +30,14 @@ const userSchema = new Schema(
         ref: "Character",
       },
     ],
+
     items: [
       {
         type: Schema.Types.ObjectId,
         ref: "Item",
       },
     ],
+
     cards: [
       {
         type: Schema.Types.ObjectId,
