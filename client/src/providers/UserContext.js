@@ -10,6 +10,7 @@ export default function UserProvider(props) {
     {
       name: "James",
       character: "berserker",
+      card: "",
     },
   ]);
 

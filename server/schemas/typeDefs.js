@@ -1,8 +1,7 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-
-type User {
+  type User {
     _id: ID
     username: String
     email: String
@@ -22,17 +21,17 @@ type User {
   }
 
   type Items {
-    in_store: Boolean 
-    spent: Boolean 
+    in_store: Boolean
+    spent: Boolean
     prosperity_level: Int
   }
 
   type Player_Cards {
-    title: String 
-    image: String 
+    title: String
+    image: String
     in_hand: Boolean
     lost: Boolean
-    discard: Boolean 
+    discard: Boolean
     active: Boolean
     card_level: Int
   }
@@ -56,4 +55,3 @@ type User {
 `;
 
 module.exports = typeDefs;
-

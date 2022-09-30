@@ -11,6 +11,7 @@ export default function UserComponents() {
         <ul>
           <li>name: {e.name}</li>
           <li>character: {e.character}</li>
+          <li>{e.card}</li>
         </ul>
       ))}
       <p>{JSON.stringify(stateStore)}</p>

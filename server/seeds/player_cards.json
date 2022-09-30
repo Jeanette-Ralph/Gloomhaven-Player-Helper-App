@@ -2,7 +2,7 @@
     {
         "title":"Numb the Pain",
         "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664494626/gloomhaven-user-app/numb_the_pain_mdkhsa.jpg",
-        "in_hand":true,
+        "in_hand":false,
         "lost":false,
         "discard":false,
         "active":false,
