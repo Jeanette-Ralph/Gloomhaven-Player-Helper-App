@@ -8,23 +8,23 @@ type User {
     email: String
     password: String
     characters: [Character]
-    items: [Item]
-    cards: [Card]
+    items: [Items]
+    cards: [Player_Cards]
   }
 
   type Character {
     title: String
-    level: Number
-    hp: Number
-    gold: Number
-    xp: Number
-    prosperity_level: Number
+    level: Int
+    hp: Int
+    gold: Int
+    xp: Int
+    prosperity_level: Int
   }
 
   type Items {
     in_store: Boolean 
     spent: Boolean 
-    prosperity_level: Number
+    prosperity_level: Int
   }
 
   type Player_Cards {
@@ -34,7 +34,7 @@ type User {
     lost: Boolean
     discard: Boolean 
     active: Boolean
-    card_level: Number
+    card_level: Int
   }
 
   type Auth {
@@ -45,27 +45,15 @@ type User {
   type Query {
     users: [User]!
     user(userId: ID!): User
-    characters: [Character]!
-    items: [Item]!
-    cards: [Card]!
-    goals: [Goals]!
+    items: [Items]!
+    cards: [Player_Cards]!
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCharacter(
-      characterID: ID!
-      title: String!
-      level: Number!
-      hp: Number!
-      gold: Number!
-      xp: Number!
-      prosperity_level: Number1!): Character
   }
-  deleteCharacter(characterID: ID!): Character
-  updateCharacter(characterID: ID!): Character
-
 `;
 
 module.exports = typeDefs;
+
