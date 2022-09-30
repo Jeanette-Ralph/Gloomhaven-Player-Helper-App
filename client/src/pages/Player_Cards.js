@@ -1,30 +1,42 @@
 import React from "react";
-import CardList from "../components/CardComponents";
-import { useQuery } from "@apollo/client";
 
-const Player_Cards = () => {
-  const { loading, data } = useQuery(QUERY_CARDS);
-
-  // Use optional chaining to check if data exists and if it has a thoughts property. If not, return an empty array to use.
-  const cards = data?.cards || [];
-
+export default function player_cards(props) {
   return (
-    <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-8 mb-3">
-          {/* If the data is still loading, render a loading message */}
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <CardList cards={cards} scr={image} />
-          )}
-        </div>
-      </div>
-    </main>
+    <div>
+      <h1>hello from the cards page</h1>
+      <h1>{props.card.title}</h1>
+      <img className="cards" src={props.card.image} alt={props.card.title} />
+    </div>
   );
-};
+}
 
-export default Player_Cards;
+// import CardList from "../components/CardComponents";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_CARDS } from "";
+
+// const Player_Cards = () => {
+//   const { loading, data } = useQuery(QUERY_CARDS);
+
+//   // Use optional chaining to check if data exists and if it has a thoughts property. If not, return an empty array to use.
+//   const cards = data?.cards || [];
+//   const image = data?.image || [];
+//   return (
+//     <main>
+//       <div className="flex-row justify-center">
+//         <div className="col-12 col-md-8 mb-3">
+//           {/* If the data is still loading, render a loading message */}
+//           {loading ? (
+//             <div>Loading...</div>
+//           ) : (
+//             <CardList cards={cards} scr={image} />
+//           )}
+//         </div>
+//       </div>
+//     </main>
+//   );
+// };
+
+// export default Player_Cards;
 
 // import * as React from "react";
 // import { styled } from "@mui/material/styles";

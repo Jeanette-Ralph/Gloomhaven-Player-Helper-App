@@ -1,15 +1,14 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-
-type User {
+  type User {
     _id: ID
     username: String
     email: String
     password: String
     characters: [Character]
-    items: [Item]
-    cards: [Card]
+    items: [Items]
+    cards: [Player_Cards]
   }
 
   type Character {
@@ -22,17 +21,17 @@ type User {
   }
 
   type Items {
-    in_store: Boolean 
-    spent: Boolean 
+    in_store: Boolean
+    spent: Boolean
     prosperity_level: Number
   }
 
   type Player_Cards {
-    title: String 
-    image: String 
+    title: String
+    image: String
     in_hand: Boolean
     lost: Boolean
-    discard: Boolean 
+    discard: Boolean
     active: Boolean
     card_level: Number
   }
@@ -43,29 +42,29 @@ type User {
   }
 
   type Query {
-    users: [User]!
-    user(userId: ID!): User
-    characters: [Character]!
-    items: [Item]!
-    cards: [Card]!
-    goals: [Goals]!
+    users: [User]
+    user(userId: ID): User
+    characters: [Character]
+    items: [Items]
+    cards: [Cards]
+    goals: [Goals]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCharacter(
-      characterID: ID!
-      title: String!
-      level: Number!
-      hp: Number!
-      gold: Number!
-      xp: Number!
-      prosperity_level: Number1!): Character
+      characterID: ID
+      title: String
+      level: Number
+      hp: Number
+      gold: Number
+      xp: Number
+      prosperity_level: Number
+    ): Character
   }
-  deleteCharacter(characterID: ID!): Character
-  updateCharacter(characterID: ID!): Character
-
 `;
 
+// deleteCharacter(characterID: ID!): Character
+// updateCharacter(characterID: ID!): Character
 module.exports = typeDefs;
