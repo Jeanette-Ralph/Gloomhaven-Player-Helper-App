@@ -1,11 +1,9 @@
 import React from "react";
-
-export default function player_cards(props) {
+// need to import data and pass it through to the cards......
+export default function Player_Cards(props) {
   return (
     <div>
       <h1>hello from the cards page</h1>
-      <h1>{props.card.title}</h1>
-      <img className="cards" src={props.card.image} alt={props.card.title} />
     </div>
   );
 }

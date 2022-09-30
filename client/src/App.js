@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import Home from "./pages/Home";
-import PLAYER_CARDS from "./pages/Player_Cards";
+import Player_Cards from "./pages/Player_Cards";
 import PLAY_MAT from "./pages/Play_Mat";
 import Header from "./components/header";
 // import login from './pages/login';
@@ -20,7 +20,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/cards" element={<PLAYER_CARDS />} />
+            <Route path="/cards" element={<Player_Cards />} />
             <Route path="/mat" element={<PLAY_MAT />} />
             {/* <Route 
             path="*"
