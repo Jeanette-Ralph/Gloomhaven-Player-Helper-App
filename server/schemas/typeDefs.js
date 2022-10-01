@@ -19,6 +19,7 @@ type User {
     gold: Int
     xp: Int
     prosperity_level: Int
+    character_title: String
   }
 
   type Items {
