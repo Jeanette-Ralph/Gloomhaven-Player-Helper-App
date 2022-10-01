@@ -8,6 +8,7 @@ const cardsSchema = new Schema({
   discard: { type: Boolean },
   active: { type: Boolean },
   card_level: { type: Number },
+  character_title: { type: String },
 });
 
 const Player_Cards = model("Card", cardsSchema);
