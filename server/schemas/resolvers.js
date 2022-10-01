@@ -26,9 +26,9 @@ const resolvers = {
         },
 
         // get cards and filter by character_title
-        card: async (parent, { character_title }) => {
-            return Character.findOne({ character_title: character_title });
-        },
+        // card: async (parent, { character_title }) => {
+        //     return Character.findOne({ character_title: character_title });
+        // },
 
         cards: async () => {
             return Player_Cards.find();
@@ -51,7 +51,7 @@ const resolvers = {
                 throw new AuthenticationError('No user with this email found!');
             }
 
-            const correctPw = await profile.isCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect password or email!');
@@ -94,22 +94,21 @@ const resolvers = {
         },
 
         // updating character except title
-        updateCharacter: async (parent, { characterId }, context) => {
-            if (context.user) {
-                const character = await Character.create({
-                    character_title
-                });
+        // updateCharacter: async (parent, { characterId }, context) => {
+        //     if (context.user) {
+        //         const character = await Character.create({
+        //             character_title
+        //         });
 
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { characters: character._id } }
-                );
+        //         await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $addToSet: { characters: character._id } }
+        //         );
 
-                return character;
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
-
+        //         return character;
+        //     }
+        //     throw new AuthenticationError('You need to be logged in!');
+        // },
     }
 }
 
