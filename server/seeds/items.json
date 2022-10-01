@@ -1,0 +1,14 @@
+[
+    {
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 2,
+    "item":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664640337/gloomhaven-user-app/gh-002-winged-shoes.0ee60100_y1upo2.png"
+},
+{
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 3,
+    "item":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664640327/gloomhaven-user-app/gh-001-boots-of-striding.91c95d80_cyeohx.png"
+}
+]

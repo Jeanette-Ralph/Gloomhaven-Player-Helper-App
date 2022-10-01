@@ -1,15 +1,12 @@
 import * as React from "react";
 
-const CardList = ({ cards }) => {
+export default function CardList({ cards }) {
   return (
     <div>
-      {cards.map((card) => (
-        <div>
-          <h2>{card.title}</h2>
-          <div key={card._id} className="card"></div>
-        </div>
+      {cards.map((p) => (
+        <div key={p}>{p}</div>
       ))}
+      <h1>hello from the cards page</h1>
     </div>
   );
-};
-export default CardList;
+}

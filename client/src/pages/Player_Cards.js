@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+
 // need to import data and pass it through to the cards......
-export default function Player_Cards(props) {
+export default function Player_Cards({ cards }) {
   return (
     <div>
+      {cards.map((p) => (
+        <div key={p}>{p}</div>
+      ))}
       <h1>hello from the cards page</h1>
     </div>
   );

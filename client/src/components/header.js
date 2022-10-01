@@ -1,7 +1,38 @@
 import * as React from "react";
-export default function header() {
-  return <div>hello</div>;
-}
+// Import React Router Link component for internal hyperlinks
+import { Link } from "react-router-dom";
+
+const Header = () => {
+  return (
+    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
+      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
+        {/* Use Link component to create a link that returns to the homepage on click */}
+        <Link className="text-dark" to="/">
+          <h1 className="m-0" style={{ fontSize: "3rem" }}>
+            Home
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/cards">
+          <h1 className="m-0" style={{ fontSize: "3rem" }}>
+            Player Card
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/mat">
+          <h1 className="m-0" style={{ fontSize: "3rem" }}>
+            Player Mat
+          </h1>
+        </Link>
+        <Link className="text-dark" to="*">
+          <h1 className="m-0" style={{ fontSize: "3rem" }}>
+            Login
+          </h1>
+        </Link>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
 
 // import AppBar from "@mui/material/AppBar";
 // import Box from "@mui/material/Box";
@@ -18,9 +49,9 @@ export default function header() {
 // import AdbIcon from "@mui/icons-material/Adb";
 
 // const pages = ["Home", "Play Mat", "Player Cards"];
-// const settings = ["Profile", "Account", "Dashboard", "Logout"];
+// const settings = ["Profile", "Account", "Dashboard", "Login"];
 
-// const Header = () => {
+// const Header = ({ handlePageChange }) => {
 //   const [anchorElNav, setAnchorElNav] = React.useState(null);
 //   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -31,12 +62,14 @@ export default function header() {
 //     setAnchorElUser(event.currentTarget);
 //   };
 
-//   const handleCloseNavMenu = () => {
+//   const handleCloseNavMenu = (page) => {
 //     setAnchorElNav(null);
+//     handlePageChange(page);
 //   };
 
-//   const handleCloseUserMenu = () => {
+//   const handleCloseUserMenu = (page) => {
 //     setAnchorElUser(null);
+//     handlePageChange(page);
 //   };
 
 //   return (
