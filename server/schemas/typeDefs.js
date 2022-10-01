@@ -18,6 +18,7 @@ const typeDefs = gql`
     gold: Int
     xp: Int
     prosperity_level: Int
+    character_title: String
   }
 
   type Items {
@@ -44,6 +45,8 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(userId: ID!): User
+    character(characterId: ID!): Character
+    characters: [Character]
     items: [Items]!
     cards: [Player_Cards]!
   }
@@ -51,6 +54,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addCharacter(characterId: ID!, userId:ID!): Character
+    updateCharacter(characterId: ID!, userId:ID!): Character
+    removeCharacter(characterId: ID!, userId:ID!): Character
   }
 `;
 
