@@ -27,7 +27,7 @@ const resolvers = {
 
         // get cards and filter by character_title
         card: async (parent, { character_title }) => {
-            return Character.findOne({ _id: character_title });
+            return Character.findOne({ character_title: character_title });
         },
 
         cards: async () => {
@@ -94,7 +94,7 @@ const resolvers = {
         },
 
         // updating character except title
-        updateCharacter: async (parent, { userId }, context) => {
+        updateCharacter: async (parent, { characterId }, context) => {
             if (context.user) {
                 const character = await Character.create({
                     character_title
@@ -110,15 +110,7 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
 
-
-
     }
-
-
-
-
-
-
 }
 
 module.exports = resolvers;
