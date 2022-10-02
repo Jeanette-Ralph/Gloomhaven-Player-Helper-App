@@ -19,12 +19,14 @@ const typeDefs = gql`
     xp: Int
     prosperity_level: Int
     character_title: String
+    image: String
   }
 
   type Items {
     in_store: Boolean
     spent: Boolean
     prosperity_level: Int
+    image: String
   }
 
   type Player_Cards {
@@ -35,6 +37,12 @@ const typeDefs = gql`
     discard: Boolean
     active: Boolean
     card_level: Int
+  }
+
+  type Goals {
+    display: Boolean
+    image: String
+    active: Boolean
   }
 
   type Auth {
@@ -49,14 +57,15 @@ const typeDefs = gql`
     characters: [Character]
     items: [Items]!
     cards: [Player_Cards]!
+    goals: [Goals]!
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCharacter(characterId: ID!, userId:ID!): Character
-    updateCharacter(characterId: ID!, userId:ID!): Character
-    removeCharacter(characterId: ID!, userId:ID!): Character
+    addCharacter(characterId: ID!, userId: ID!): Character
+    updateCharacter(characterId: ID!, userId: ID!): Character
+    removeCharacter(characterId: ID!, userId: ID!): Character
   }
 `;
 
