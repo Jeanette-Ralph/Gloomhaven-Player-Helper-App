@@ -3,8 +3,10 @@ const Player_Cards = require("../models/Player_Cards");
 const cardsSeeds = require("./player_cards.json");
 const Battle_Goals = require("../models/Goals");
 const goalSeeds = require("./battle_goals.json");
-const Items = require("../models/Goals");
+const Items = require("../models/Items");
 const itemsSeeds = require("./items.json");
+const Character = require("../models/Character");
+const characterSeeds = require("./characters.json");
 
 db.once("open", async () => {
   try {
@@ -16,6 +18,9 @@ db.once("open", async () => {
 
     await Items.deleteMany({});
     await Items.create(itemsSeeds);
+
+    await Character.deleteMany({});
+    await Character.create(characterSeeds);
   } catch (err) {
     console.log(error);
   }

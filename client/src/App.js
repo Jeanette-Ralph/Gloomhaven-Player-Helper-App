@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useEffect, useState } from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
@@ -5,9 +6,20 @@
 // import Player_Cards from "./pages/Player_Cards";
 // import PLAY_MAT from "./pages/Play_Mat";
 // import Header from "./components/header";
+=======
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import Home from "./pages/Home";
+import Player_Cards from "./pages/Player_Cards";
+import PLAY_MAT from "./pages/Play_Mat";
+import Header from "./components/header";
+
+>>>>>>> development
 // import login from './pages/login';
 import LoginForm from "./components/LoginForm";
 
+<<<<<<< HEAD
 
 // login dependencies
 
@@ -42,6 +54,24 @@ function App() {
               <Route path="/cards" element={<Player_Cards cards={cards} />} />
               <Route path="/mat" element={<PLAY_MAT />} />
               {/* <Route 
+=======
+const client = new ApolloClient({
+  uri: "http://localhost:3001/graphql",
+  cache: new InMemoryCache(),
+});
+
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cards" element={<Player_Cards />} />
+            <Route path="/mat" element={<PLAY_MAT />} />
+            {/* <Route 
+>>>>>>> development
             path="*"
             element={<login />}
           /> */}
@@ -54,19 +84,3 @@ function App() {
 }
 
 export default App;
-
-// import UserComponents from "./components/UsersComponents";
-// import "./App.css";
-// import UserProvider from "./providers/UserContext";
-
-// function App() {
-//   return (
-//     <UserProvider>
-//       <div className="App">
-//         <UserComponents />
-//       </div>
-//     </UserProvider>
-//   );
-// }
-
-// export default App;

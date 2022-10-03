@@ -7,6 +7,7 @@ const characterSchema = new Schema({
   gold: Number,
   xp: Number,
   prosperity_level: Number,
+  image: String,
 });
 
 const Character = model("Character", characterSchema);
