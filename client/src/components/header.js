@@ -1,6 +1,7 @@
 // import * as React from "react";
 // Import React Router Link component for internal hyperlinks
 import { Link } from "react-router-dom";
+import Auth from '../../utils/auth';
 
 // const Header = () => {
 //   return (
@@ -53,6 +54,7 @@ const pages = ["Cards", "Mat", "Login"];
 const settings = ["Profile", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -69,6 +71,12 @@ const ResponsiveAppBar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  // adding in auth for logout
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
   };
 
   return (
