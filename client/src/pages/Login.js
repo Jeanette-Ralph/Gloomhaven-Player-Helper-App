@@ -66,7 +66,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="submit-button"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -76,7 +76,7 @@ const Login = (props) => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="error-message">
                 {error.message}
               </div>
             )}

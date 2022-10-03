@@ -39,7 +39,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main>
         <div className="card">
           <h4 className="card-header">Sign Up</h4>
           <div className="card-body">
@@ -75,7 +75,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="submit-button"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -85,7 +85,7 @@ const Signup = () => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="error-message">
                 {error.message}
               </div>
             )}
