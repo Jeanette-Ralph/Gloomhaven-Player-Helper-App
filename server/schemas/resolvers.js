@@ -67,7 +67,7 @@ const resolvers = {
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: character._id } }
+          { $pull: { characters: character._id } }
         );
         return character;
       }
@@ -77,7 +77,7 @@ const resolvers = {
     updateCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
         const character = await Character.create({
-          character_title,
+          characterId,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
