@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import EmailIcon from '@mui/icons-material/Email';
+import PasswordIcon from '@mui/icons-material/Password';
 
 import Auth from '../utils/auth';
 
@@ -51,9 +53,10 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="Email"
                   name="email"
                   type="email"
+                  startDecorator={<EmailIcon fontSize="small" />}
                   value={formState.email}
                   onChange={handleChange}
                 />
@@ -62,6 +65,7 @@ const Login = (props) => {
                   placeholder="******"
                   name="password"
                   type="password"
+                  startDecorator={<PasswordIcon fontSize="small" />}
                   value={formState.password}
                   onChange={handleChange}
                 />

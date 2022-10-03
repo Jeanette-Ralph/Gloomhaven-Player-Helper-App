@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import EmailIcon from '@mui/icons-material/Email';
+import PasswordIcon from '@mui/icons-material/Password';
+import PersonIcon from '@mui/icons-material/Person';
 
 import Auth from '../utils/auth';
 
@@ -52,17 +54,19 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Username"
                   name="name"
                   type="text"
+                  startDecorator={<PersonIcon fontSize="small" />}
                   value={formState.name}
                   onChange={handleChange}
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="Email"
                   name="email"
                   type="email"
+                  startDecorator={<EmailIcon fontSize="small" />}
                   value={formState.email}
                   onChange={handleChange}
                 />
@@ -71,6 +75,7 @@ const Signup = () => {
                   placeholder="******"
                   name="password"
                   type="password"
+                  startDecorator={<PasswordIcon fontSize="small" />}
                   value={formState.password}
                   onChange={handleChange}
                 />
