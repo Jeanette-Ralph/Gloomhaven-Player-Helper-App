@@ -2,9 +2,37 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Character, Items, Player_Cards, Goals } = require("../models");
 const { signToken } = require("../utils/auth");
 const resolvers = {
-  Query: {
-    users: async () => {
-      return User.find();
+    Query: {
+
+        users: async () => {
+            return User.find();
+        },
+
+        user: async (parent, { userId }) => {
+            return User.findOne({ _id: userId });
+        },
+
+        characters: async () => {
+            return Character.find();
+        },
+
+        character: async (parent, { characterId }) => {
+            return Character.findOne({ _id: characterId });
+        },
+
+        items: async () => {
+            return Items.find();
+        },
+
+        // get cards and filter by character_title
+        // card: async (parent, { character_title }) => {
+        //     return Character.findOne({ character_title: character_title });
+        // },
+
+        cards: async () => {
+            return Player_Cards.find();
+        }
+
     },
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
