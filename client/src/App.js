@@ -1,64 +1,36 @@
-<<<<<<< HEAD
-// import React, { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-// import Home from "./pages/Home";
-// import Player_Cards from "./pages/Player_Cards";
-// import PLAY_MAT from "./pages/Play_Mat";
-// import Header from "./components/header";
-=======
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@apollo/client";
 import Home from "./pages/Home";
 import Player_Cards from "./pages/Player_Cards";
 import PLAY_MAT from "./pages/Play_Mat";
 import Header from "./components/header";
+import { setContext } from '@apollo/client/link/context';
 
->>>>>>> development
 // import login from './pages/login';
 import LoginForm from "./components/LoginForm";
 
-<<<<<<< HEAD
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
 
-// login dependencies
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
-
-
-// end of login stuff
-
-// const client = new ApolloClient({
-//   uri: "/graphql",
-//   cache: new InMemoryCache(),
-// });
-
-function App() {
-  // const [currentPage, setCurrentPage] = useState("Home");
-  // const handlePageChange = (page) => setCurrentPage(page);
-  // const [cards, setCards] = useState(["power from pain", "maw of the jaw"]);
-  // useEffect((
-
-  // ))
-  return (
-    <div>
-      <LoginForm />
-      {/* <ApolloProvider client={client}>
-        <Router>
-          <div className="flex-column justify-center align-center min-100-vh bg-primary">
-            <Header
-            // currentPage={currentPage}
-            // handlePageChange={handlePageChange}
-            />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cards" element={<Player_Cards cards={cards} />} />
-              <Route path="/mat" element={<PLAY_MAT />} />
-              {/* <Route 
-=======
 const client = new ApolloClient({
   uri: "http://localhost:3001/graphql",
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   return (
@@ -70,16 +42,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Player_Cards />} />
             <Route path="/mat" element={<PLAY_MAT />} />
-            {/* <Route 
->>>>>>> development
+            <Route 
             path="*"
             element={<login />}
-          /> */}
-            {/* </Routes> */}
-          {/* </div> */}
-        {/* </Router> */}
-      {/* </ApolloProvider> */} 
-    </div>
+          />
+            </Routes>
+          </div>
+        </Router>
+      </ApolloProvider> 
   );
 }
 
