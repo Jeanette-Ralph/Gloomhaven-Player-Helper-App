@@ -9,7 +9,7 @@ import Header from "./components/header";
 // import login from './pages/login';
 
 const client = new ApolloClient({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
   cache: new InMemoryCache(),
 });
 
