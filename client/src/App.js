@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Player_Cards from "./pages/Player_Cards";
 import PLAY_MAT from "./pages/Play_Mat";
 import Header from "./components/header";
+
 // import login from './pages/login';
 
 const client = new ApolloClient({
@@ -13,23 +14,14 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [currentPage, setCurrentPage] = useState("Home");
-  // const handlePageChange = (page) => setCurrentPage(page);
-  const [cards, setCards] = useState(["power from pain", "maw of the jaw"]);
-  // useEffect((
-
-  // ))
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Header
-          // currentPage={currentPage}
-          // handlePageChange={handlePageChange}
-          />
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/cards" element={<Player_Cards cards={cards} />} />
+            <Route path="/cards" element={<Player_Cards />} />
             <Route path="/mat" element={<PLAY_MAT />} />
             {/* <Route 
             path="*"
@@ -43,19 +35,3 @@ function App() {
 }
 
 export default App;
-
-// import UserComponents from "./components/UsersComponents";
-// import "./App.css";
-// import UserProvider from "./providers/UserContext";
-
-// function App() {
-//   return (
-//     <UserProvider>
-//       <div className="App">
-//         <UserComponents />
-//       </div>
-//     </UserProvider>
-//   );
-// }
-
-// export default App;
