@@ -12,8 +12,8 @@ import PLAY_MAT from "./pages/Play_Mat";
 import Header from "./components/header";
 import { setContext } from "@apollo/client/link/context";
 
-// // import login from './pages/login';
-// import LoginForm from "./components/LoginForm";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,6 +46,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Player_Cards />} />
             <Route path="/mat" element={<PLAY_MAT />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<login />} />
           </Routes>
         </div>
