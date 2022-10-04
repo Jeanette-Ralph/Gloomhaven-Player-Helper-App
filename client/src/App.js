@@ -44,9 +44,7 @@ function App() {
             <Route path="/mat" element={<PLAY_MAT />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup />} />
-            <Route 
-            path="*"
-            element={<login />}
+            <Route path="*" element={<login />}
           />
             </Routes>
           </div>

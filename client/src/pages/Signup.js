@@ -44,7 +44,6 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
@@ -62,7 +61,6 @@ const Signup = () => {
                   placeholder="Email"
                   name="email"
                   type="email"
-                 
                   value={formState.email}
                   onChange={handleChange}
                 />

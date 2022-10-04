@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import EmailIcon from '@mui/icons-material/Email';
-import PasswordIcon from '@mui/icons-material/Password';
 
 import Auth from '../utils/auth';
 
@@ -45,10 +43,9 @@ const Login = (props) => {
           <h4 className="card-header">Login</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
+              <div>
+                <Link to="/mat"></Link>
+              </div>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
@@ -56,7 +53,6 @@ const Login = (props) => {
                   placeholder="Email"
                   name="email"
                   type="email"
-                  startDecorator={<EmailIcon fontSize="small" />}
                   value={formState.email}
                   onChange={handleChange}
                 />
@@ -65,7 +61,6 @@ const Login = (props) => {
                   placeholder="******"
                   name="password"
                   type="password"
-                  startDecorator={<PasswordIcon fontSize="small" />}
                   value={formState.password}
                   onChange={handleChange}
                 />
