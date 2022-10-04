@@ -1,4 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+
+const CardList = ({ cards }) => {
+  if (!cards.length) {
+    return <h2>Building the Deck</h2>;
+  }
+
+  // const [cardImage, setCardImage] = useState(cards.in_hand);
+  const handleButtonClick = (cards) => {
+    console.log("button clicked");
+    // if (event.in_hand === true) {
+    //   setCardImage(false);
+    // } else {
+    //   setCardImage(true);
+    // }
+  };
+  // const { in_hand } = event.target;
+
+  return (
+    <div>
+      <div className="flex-row justify-space-between my-4">
+        {cards &&
+          cards.map((card) => (
+            <div key={card._id}>
+              <button onClick={handleButtonClick}>
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  data-hand={card.in_hand}
+                />
+              </button>
+              <h5>{card.title}</h5>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+};
+export default CardList;
 
 // import * as React from "react";
 // import { styled } from "@mui/material/styles";
@@ -129,24 +167,3 @@ import React from "react";
 //     </Box>
 //   );
 // }
-
-const CardList = ({ cards }) => {
-  if (!cards.length) {
-    return <h2>Building the Deck</h2>;
-  }
-  return (
-    <div>
-      <div className="flex-row justify-space-between my-4">
-        {cards &&
-          cards.map((card) => (
-            <div key={card._id}>
-              <h1>hello</h1>
-              <img src={card.image} alt={card.title} />
-              <h5>{card.title}</h5>
-            </div>
-          ))}
-      </div>
-    </div>
-  );
-};
-export default CardList;
