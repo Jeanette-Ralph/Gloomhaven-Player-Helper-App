@@ -136,9 +136,8 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-
                     {/* Logout */}
-                    <Link className="text-dark" onClick={logout} >
+                    <Link className="text-dark" onClick={logout}>
                       Logout
                     </Link>
                   </Button>
@@ -149,7 +148,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-                    <Link className="text-dark" to="/login" >
+                    <Link className="text-dark" to="/login">
                       Login
                     </Link>
                   </Button>
@@ -158,11 +157,12 @@ const ResponsiveAppBar = () => {
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     {/* Sign Up */}
-                    <Link className="text-dark" to="/signup" >
+                    <Link className="text-dark" to="/signup">
                       Sign Up
                     </Link>
                   </Button>
-                </>)}
+                </>
+              )}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
@@ -198,8 +198,6 @@ const ResponsiveAppBar = () => {
       </AppBar>
     </>
   );
-
 };
 
 export default ResponsiveAppBar;
-

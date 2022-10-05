@@ -1,14 +1,21 @@
-import React from "react";
-import CardComp from "../components/CardComponents";
+import React, { useState } from "react";
+
+import DeckMaker from "../components/DeckMaker";
 import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "../utils/queries";
 
-const Cards = () => {
+const Cards = (props) => {
   const { loading, data } = useQuery(QUERY_CARDS);
-  const cards = data?.cards || [];
 
+  const cards = data?.cards || [];
   return (
-    <div>{loading ? <div>Loading...</div> : <CardComp cards={cards} />}</div>
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <DeckMaker cards={cards}>{props.children}</DeckMaker>
+      )}
+    </div>
   );
 };
 export default Cards;
