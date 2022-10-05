@@ -1,7 +1,7 @@
 [
     {
         "title":"Numb the Pain",
-        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664494626/gloomhaven-user-app/numb_the_pain_mdkhsa.jpg",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_148/v1664494626/gloomhaven-user-app/numb_the_pain_mdkhsa.jpg",
         "in_hand":true,
         "lost":false,
         "discard":false,
@@ -10,7 +10,7 @@
     },
     {
         "title":"Bounce Back",
-        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664640380/gloomhaven-user-app/images_ro1mjz.jpg",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664924264/gloomhaven-user-app/images_ro1mjz.jpg",
         "in_hand":false,
         "lost":false,
         "discard":false,
@@ -19,7 +19,7 @@
     },
     {
     "title":"Defiance of Death",
-    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664640365/gloomhaven-user-app/CVIUHZq_edipir.jpg",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1664640365/gloomhaven-user-app/CVIUHZq_edipir.jpg",
     "in_hand":false,
     "lost":false,
     "discard":false,

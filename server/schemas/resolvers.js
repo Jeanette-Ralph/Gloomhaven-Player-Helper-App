@@ -87,6 +87,20 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // updateCard: async (parent, { cardId }, context) => {
+    //   if (context.character) {
+    //     const card = await Card.create({
+    //       cardId,
+    //     });
+    //     await Character.findOneAndUpdate(
+    //       { _id: context.character._id },
+    //       { $addToSet: { characters: character._id } }
+    //     );
+    //     return character;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
   },
 };
 module.exports = resolvers;

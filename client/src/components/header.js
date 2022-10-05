@@ -14,26 +14,10 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <div>
-              <Link className="btn btn-lg btn-light m-2" to='/cards'>
+              <Link className="btn btn-lg btn-light m-2" to="/cards">
                 Cards
               </Link>
-<<<<<<< HEAD
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link className="text-dark" to="/mat">
-                Mat
-              </Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link className="text-dark" to="*">
-=======
-              <Link className="btn btn-lg btn-light m-2" to='/mat'>
+              <Link className="btn btn-lg btn-light m-2" to="/mat">
                 Mat
               </Link>
               <Link className="btn btn-lg btn-light m-2" onClick={logout}>
@@ -43,7 +27,6 @@ const Header = () => {
           ) : (
             <>
               <Link className="btn btn-lg btn-primary m-2" to="/login">
->>>>>>> development
                 Login
               </Link>
               <Link className="btn btn-lg btn-light m-2" to="/signup">
