@@ -41,7 +41,7 @@ const user = {
   // session username
   name: "James",
   // the cards that they choose
-  favorites: [],
+  active_cards: [],
 };
 
 function App() {
@@ -51,14 +51,16 @@ function App() {
         <Router>
           <div className="flex-column justify-center align-center min-100-vh bg-primary">
             <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cards" element={<Player_Cards />} />
-              <Route path="/mat" element={<PLAY_MAT />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="*" element={<login />} />
-            </Routes>
+            <Player_Cards>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                {/* <Route path="/cards" element={<Player_Cards />} /> */}
+                <Route path="/mat" element={<PLAY_MAT />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="*" element={<login />} />
+              </Routes>
+            </Player_Cards>
           </div>
         </Router>
       </UserContext.Provider>

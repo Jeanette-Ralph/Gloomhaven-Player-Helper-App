@@ -1,6 +1,6 @@
 import React, { useReducer, createContext } from "react";
 import { createUseStyles } from "react-jss";
-import CardBuilder from "./CardBuilder";
+import CardBuilder from "./CardBuider";
 import CardSummary from "./CardSummary";
 
 const useStyles = createUseStyles({
@@ -16,8 +16,7 @@ function reducer(state, item) {
   return [...state, item];
 }
 
-export default function CreateDeck({ cards }) {
-  console.log("------deck maker-----", cards);
+export default function CreateDeck(props) {
   const classes = useStyles();
   const [deck, setDeck] = useReducer(reducer, []);
   return (
@@ -31,9 +30,10 @@ export default function CreateDeck({ cards }) {
           {" "}
           ⚔️
         </span>
+        {props.children}
       </h1>
-      <CardBuilder cards={cards} />
-      <CardSummary cards={cards} deck={deck} />
+      <CardBuilder cards={props.cards} />
+      <CardSummary cards={props.cards} deck={deck} />
     </DeckContext.Provider>
   );
 }

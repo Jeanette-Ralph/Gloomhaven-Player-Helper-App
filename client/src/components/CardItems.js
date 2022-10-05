@@ -36,12 +36,13 @@ export default function CardList({ image, title }) {
   const classes = useStyles();
   const { setDeck } = useContext(DeckContext);
   const user = useContext(UserContext);
-  // const favorite = user.favorites.includes(title);
+  // const active_cards = user.active.includes(title, image);
   const [id, updateId] = useReducer(reducer, 0);
   function update() {
     setDeck({
       title,
       id: `${title}-${id}`,
+      image,
     });
     updateId();
   }

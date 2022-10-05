@@ -20,17 +20,19 @@ const useStyles = createUseStyles({
   },
 });
 // cards?
-export default function CardSummary({ cards }) {
-  console.log("------card summary-----", cards);
+export default function CardSummary(props) {
   const classes = useStyles();
   const { deck } = useContext(DeckContext);
-  console.log("------card summary-----", deck);
+  console.log(deck);
   return (
     <div className={classes.wrapper}>
       <h2>Your Deck</h2>
       <ul className={classes.list}>
-        {deck.map(({ title, id }) => (
-          <li key={id}>{title}</li>
+        {deck.map(({ title, id, image }) => (
+          <li key={id}>
+            {title}
+            {image}
+          </li>
         ))}
       </ul>
     </div>
