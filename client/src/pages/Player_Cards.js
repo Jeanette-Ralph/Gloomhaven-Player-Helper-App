@@ -6,7 +6,7 @@ import { QUERY_CARDS } from "../utils/queries";
 
 const Cards = (props) => {
   const { loading, data } = useQuery(QUERY_CARDS);
-
+  console.log("--------------playercards-----------", props);
   const cards = data?.cards || [];
   return (
     <div>
