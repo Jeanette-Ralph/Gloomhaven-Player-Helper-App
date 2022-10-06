@@ -3,7 +3,7 @@ import React, { useReducer, useContext } from "react";
 import { createUseStyles } from "react-jss";
 import UserContext from "./User";
 
-import { DeckContext } from "./DeckMaker";
+import { ItemContext } from "./ItemMaker";
 
 const useStyles = createUseStyles({
   add: {
@@ -32,14 +32,14 @@ const useStyles = createUseStyles({
 });
 
 const reducer = (key) => key + 1;
-export default function CardList({ image, title }) {
+export default function ItemList({ title, image }) {
   const classes = useStyles();
-  const { setDeck } = useContext(DeckContext);
+  const { setItem } = useContext(ItemContext);
   const user = useContext(UserContext);
   // const active_cards = user.active.includes(title, image);
   const [id, updateId] = useReducer(reducer, 0);
   function update() {
-    setDeck({
+    setItem({
       title,
       id: `${title}-${id}`,
       image,
@@ -48,7 +48,6 @@ export default function CardList({ image, title }) {
   }
   return (
     <div className={classes.wrapper}>
-      <h3>{title}</h3>
       {/* <span
         className={classes.favorite}
         aria-label={favorite ? "Favorite" : "Not Favorite"}

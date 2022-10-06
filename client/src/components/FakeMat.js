@@ -1,7 +1,15 @@
 import React from "react";
+import { useCard } from "../providers/DeckContext";
 
-const FakeMatList = () => {
-  <h5>fAKE MAT TEST</h5>;
-  // <h1>fake mat list</h1>;
-};
-export default FakeMatList;
+export default function FakeMatList() {
+  const stateStore = useCard();
+  return (
+    <div>
+      {stateStore.cards.map((e, i) => (
+        <ul key={i}>
+          <li>e.title</li>
+        </ul>
+      ))}
+    </div>
+  );
+}

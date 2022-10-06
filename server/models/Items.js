@@ -5,6 +5,7 @@ const itemSchema = new Schema({
   spent: { type: Boolean },
   prosperity_level: { type: Number },
   image: { type: String },
+  title: { type: String },
 });
 
 const Item = model("Item", itemSchema);

@@ -1,14 +1,18 @@
 import React from "react";
-import ItemComp from "../components/ItemComponent";
-// import { useMutation } from '@apollo/client';
-import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS, QUERY_CARDS } from "../utils/queries";
-import CardSummary from "../components/CardSummary";
+import Items from "./Items";
+import ItemSummary from "../components/ItemSummary";
 
-const Play_Mat = () => {
+const Play_Mat = (props, { item }) => {
   return (
     <div>
-      <h1>player mat</h1>;
+      {/* <Items> */}
+      {/* </Items> */}
+
+      {"loading" ? (
+        <div>Loading...</div>
+      ) : (
+        <ItemSummary items={props.items} item={item} />
+      )}
     </div>
   );
 };

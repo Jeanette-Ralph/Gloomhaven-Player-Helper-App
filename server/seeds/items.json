@@ -1,11 +1,13 @@
 [
     {
+        "title":"winged shoes",
     "in_store": true,
     "spent": false,
     "prosperity_level": 2,
     "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664640337/gloomhaven-user-app/gh-002-winged-shoes.0ee60100_y1upo2.png"
 },
 {
+    "title":"boots of striding",
     "in_store": true,
     "spent": false,
     "prosperity_level": 3,

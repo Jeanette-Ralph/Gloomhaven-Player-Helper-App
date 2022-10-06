@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { createUseStyles } from "react-jss";
 
-import { DeckContext } from "./DeckMaker";
+import { ItemContext } from "./ItemMaker";
 
 const useStyles = createUseStyles({
   list: {
@@ -20,18 +20,18 @@ const useStyles = createUseStyles({
   },
 });
 
-export default function CardSummary(props) {
+export default function ItemSummary(props) {
   const classes = useStyles();
-  const { deck } = useContext(DeckContext);
-  console.log(deck);
+  const { item } = useContext(ItemContext);
+  console.log(item);
   return (
     <div className={classes.wrapper}>
-      <h2>Your Deck</h2>
+      <h2>Your item</h2>
       <ul className={classes.list}>
-        {deck.map((props) => (
-          <li key={props.id}>
-            {props.title}
-            {props.image}
+        {item.map(({ title, id, image }) => (
+          <li key={id}>
+            {title}
+            {image}
           </li>
         ))}
       </ul>
