@@ -12,7 +12,6 @@ const typeDefs = gql`
   }
 
   type Character {
-    title: String
     level: Int
     hp: Int
     gold: Int
@@ -20,6 +19,7 @@ const typeDefs = gql`
     prosperity_level: Int
     character_title: String
     image: String
+    cards: [Player_Cards]
   }
 
   type Items {

@@ -11,7 +11,8 @@ const characterSeeds = require("./characters.json");
 db.once("open", async () => {
   try {
     await Player_Cards.deleteMany({});
-    await Player_Cards.create(cardsSeeds);
+    // cmay not need this as they will gen with character later
+    // await Player_Cards.create(cardsSeeds);
 
     await Battle_Goals.deleteMany({});
     await Battle_Goals.create(goalSeeds);
@@ -21,6 +22,20 @@ db.once("open", async () => {
 
     await Character.deleteMany({});
     await Character.create(characterSeeds);
+
+    // need to seed the character with the card data
+
+    for (let i = 0; i < CardsSeeds.length; i++) {
+      const { _id, character_card } = await Player_Cards.create(cardsSeeds[i]);
+      const characterUpdate = await Character.findOneAndUpdate(
+        { character_title: character_card },
+        {
+          $addToSet: {
+            cards: _id,
+          },
+        }
+      );
+    }
   } catch (err) {
     console.log(error);
   }

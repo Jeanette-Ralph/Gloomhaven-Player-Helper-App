@@ -9,25 +9,23 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
-    // characters: async () => {
-    //   return Character.find();
-    // },
-    // character: async (parent, { characterId }) => {
-    //   return Character.findOne({ _id: characterId });
-    // },
+    characters: async () => {
+      return Character.find();
+    },
+    // get cards and filter by character_title
+    character: async (parent, { character }) => {
+      return Character.findOne({ character }).populate("cards");
+    },
     items: async () => {
       return Items.find();
     },
-    // get cards and filter by character_title
-    // card: async (parent, { character_title }) => {
-    //   return Character.findOne({ character_title: character_title });
-    // },
+
     cards: async () => {
       return Player_Cards.find();
     },
-    goals: async () => {
-      return Goals.find();
-    },
+    // goals: async () => {
+    //   return Goals.find();
+    // },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

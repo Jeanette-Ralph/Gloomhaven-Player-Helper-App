@@ -6,7 +6,8 @@
         "lost":false,
         "discard":false,
         "active":false,
-        "card_level":5
+        "card_level":5,
+        "character_card":"berserker"
     },
     {
         "title":"Bounce Back",
@@ -15,7 +16,8 @@
         "lost":false,
         "discard":false,
         "active":false,
-        "card_level":1
+        "card_level":1,
+        "character_card":"berserker"
     },
     {
     "title":"Defiance of Death",
@@ -24,6 +26,7 @@
     "lost":false,
     "discard":false,
     "active":false,
-    "card_level":1
+    "card_level":1,
+    "character_card":"sunkeeper"
 }
 ]

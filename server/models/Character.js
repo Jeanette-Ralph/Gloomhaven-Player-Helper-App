@@ -8,6 +8,12 @@ const characterSchema = new Schema({
   xp: Number,
   prosperity_level: Number,
   image: String,
+  cards: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Player_Cards",
+    },
+  ],
 });
 
 const Character = model("Character", characterSchema);
