@@ -23,6 +23,7 @@ const typeDefs = gql`
   }
 
   type Items {
+    title: String
     in_store: Boolean
     spent: Boolean
     prosperity_level: Int

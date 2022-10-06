@@ -13,7 +13,9 @@ import Header from "./components/header";
 import { setContext } from "@apollo/client/link/context";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import UserContext from "./components/User";
+import FakeMatList from "./components/FakeMat";
+import DeckProvider from "./providers/DeckContext";
+import Items from "./pages/Items";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -36,34 +38,30 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// how does this become a random player? is player out prop to then load the specific items?
-const user = {
-  // session username
-  name: "James",
-  // the cards that they choose
-  active_cards: [],
-};
-
 function App() {
   return (
+    // <DeckProvider>
+    //   <div className="App">
+    //     <FakeMatList />
+    //   </div>
+    // </DeckProvider>
     <ApolloProvider client={client}>
-      <UserContext.Provider value={user}>
-        <Router>
-          <div className="flex-column justify-center align-center min-100-vh bg-primary">
-            <Header />
-            <Player_Cards>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                {/* <Route path="/cards" element={<Player_Cards />} /> */}
-                <Route path="/mat" element={<PLAY_MAT />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="*" element={<login />} />
-              </Routes>
-            </Player_Cards>
-          </div>
-        </Router>
-      </UserContext.Provider>
+      <Router>
+        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+          <Header />
+          {/* <Player_Cards> */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cards" element={<Player_Cards />} />
+            <Route path="/mat" element={<PLAY_MAT />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/items" element={<Items />} />
+            <Route path="*" element={<Login />} />
+          </Routes>
+          {/* </Player_Cards> */}
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }

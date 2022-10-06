@@ -41,6 +41,7 @@ export const QUERY_GOALS = gql`
 export const QUERY_ITEMS = gql`
   query getItems {
     items {
+      title
       in_store
       spent
       image
