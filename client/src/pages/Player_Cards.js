@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import CharacterMenu from "../components/CharacterMenu";
 import DeckMaker from "../components/DeckMaker";
 import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "../utils/queries";
@@ -10,6 +10,9 @@ const Cards = (props) => {
   const cards = data?.cards || [];
   return (
     <div>
+      <div>
+        <CharacterMenu />
+      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (
