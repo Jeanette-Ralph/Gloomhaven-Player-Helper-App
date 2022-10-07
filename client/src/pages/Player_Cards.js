@@ -5,6 +5,11 @@ import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "../utils/queries";
 
 const Cards = (props) => {
+
+  // auth code
+  
+
+
   const { loading, data } = useQuery(QUERY_CARDS);
   console.log("--------------playercards-----------", props);
   const cards = data?.cards || [];
