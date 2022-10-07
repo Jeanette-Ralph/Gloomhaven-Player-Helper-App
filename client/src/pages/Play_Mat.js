@@ -1,18 +1,12 @@
 import React from "react";
-import Items from "./Items";
 import ItemSummary from "../components/ItemSummary";
+import CardSummary from "../components/CardSummary";
 
-const Play_Mat = (props, { item }) => {
+const Play_Mat = (props) => {
   return (
     <div>
-      {/* <Items> */}
-      {/* </Items> */}
-
-      {"loading" ? (
-        <div>Loading...</div>
-      ) : (
-        <ItemSummary items={props.items} item={item} />
-      )}
+      <CardSummary cards={props.cards} deck={props.deck} />
+      {/* <ItemSummary items={props.items} item={props.items} /> */}
     </div>
   );
 };

@@ -1,26 +1,16 @@
-import React, { useReducer, createContext } from "react";
+import React from "react";
 import { createUseStyles } from "react-jss";
 import CardBuilder from "./CardBuilder";
 import CardSummary from "./CardSummary";
-
 const useStyles = createUseStyles({
   wrapper: {
     textAlign: "center",
   },
 });
-
-// have to figure this out
-export const DeckContext = createContext();
-
-function reducer(state, item) {
-  return [...state, item];
-}
-
-export default function CreateDeck(props) {
+export default function DeckMaker2(props) {
   const classes = useStyles();
-  const [deck, setDeck] = useReducer(reducer, []);
   return (
-    <DeckContext.Provider value={{ deck, setDeck }}>
+    <>
       <h1 className={classes.wrapper}>
         <span role="img" aria-label="Card">
           ⚔️{" "}
@@ -33,7 +23,7 @@ export default function CreateDeck(props) {
         {props.children}
       </h1>
       <CardBuilder cards={props.cards} />
-      <CardSummary cards={props.cards} deck={deck} />
-    </DeckContext.Provider>
+      <CardSummary cards={props.cards} deck={props.deck} />
+    </>
   );
 }

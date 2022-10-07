@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "../utils/queries";
-import { DeckContext } from "../components/DeckMaker";
+import { DeckContext } from "../components/DeckMakerProvider";
 
 const CardContext = createContext();
 

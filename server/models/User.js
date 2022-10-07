@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
+const bcrypt = require("bcrypt");
+const mongoose = require("mongoose");
 
 const characterSchema = require("./Character");
 const itemSchema = require("./Items");
@@ -24,7 +24,7 @@ const userSchema = new Schema(
       required: true,
     },
 
-    // set items, player_cards, character to be an array of data that adheres to the bookSchema
+    // set items, player_cards, character to be an array of data that adheres to the userSchema
     characters: [
       {
         type: Schema.Types.ObjectId,
@@ -54,8 +54,8 @@ const userSchema = new Schema(
 );
 
 // set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
