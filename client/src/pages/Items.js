@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import ItemMaker from "../components/ItemMaker";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS } from "../utils/queries";
@@ -11,9 +10,6 @@ const Items = (props) => {
   const items = data?.items || [];
   return (
     <div>
-      <div>
-        <CharacterMenu />
-      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (
@@ -23,3 +19,7 @@ const Items = (props) => {
   );
 };
 export default Items;
+
+// <div>
+//   <CharacterMenu />
+// </div>

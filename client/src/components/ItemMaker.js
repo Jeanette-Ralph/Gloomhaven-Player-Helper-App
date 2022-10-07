@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from "react";
+import React from "react";
 import { createUseStyles } from "react-jss";
 import ItemBuilder from "./ItemBuilder";
 import ItemSummary from "./ItemSummary";
@@ -23,7 +23,7 @@ export default function ItemMaker(props) {
         {props.children}
       </h1>
       <ItemBuilder items={props.items} />
-      <ItemSummary items={props.items} item={props.items} />
+      <ItemSummary items={props.items} item={props.item} />
     </>
   );
 }
