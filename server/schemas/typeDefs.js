@@ -71,6 +71,5 @@ const typeDefs = gql`
     removeCharacter(characterId: ID!, userId: ID!): Character
   }
 `;
-// updateCards(characterId: ID!, cardId: ID!): Player_Cards
 
 module.exports = typeDefs;

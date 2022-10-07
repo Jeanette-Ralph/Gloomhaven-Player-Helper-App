@@ -33,20 +33,34 @@ const SavedPlayerCards = () => {
 
     getUserData();
   }, [userDataLength]);
-};
 
-const Cards = (props) => {
-  const { loading, data } = useQuery(QUERY_CARDS);
-  console.log("--------------playercards-----------", props);
-  const cards = data?.cards || [];
-  return (
-    <div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <DeckMaker cards={cards}>{props.children}</DeckMaker>
-      )}
-    </div>
-  );
+  const Cards = (props) => {
+    const { loading, data } = useQuery(QUERY_CARDS);
+    console.log("--------------playercards-----------", props);
+    const cards = data?.cards || [];
+    return (
+      <div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <DeckMaker cards={cards}>{props.children}</DeckMaker>
+        )}
+      </div>
+    );
+  };
+
+  // const Cards = (props) => {
+  //   const { loading, data } = useQuery(QUERY_CARDS);
+  //   console.log("--------------playercards-----------", props);
+  //   const cards = data?.cards || [];
+  //   return (
+  //     <div>
+  //       {loading ? (
+  //         <div>Loading...</div>
+  //       ) : (
+  //         <DeckMaker cards={cards}>{props.children}</DeckMaker>
+  //       )}
+  //     </div>
+  //   );
 };
 export default SavedPlayerCards;

@@ -11,7 +11,7 @@ const characterSeeds = require("./characters.json");
 db.once("open", async () => {
   try {
     await Player_Cards.deleteMany({});
-    // cmay not need this as they will gen with character later
+    // may not need this as they will gen with character later
     // await Player_Cards.create(cardsSeeds);
 
     await Battle_Goals.deleteMany({});
