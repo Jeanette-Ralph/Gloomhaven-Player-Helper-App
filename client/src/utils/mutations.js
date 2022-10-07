@@ -24,25 +24,25 @@ export const ADD_CHARACTER = gql`
   }
 `;
 
-// export const REMOVE_CHARACTER = gql`
-//   mutation removeCharacter($characterId: ID!) {
-//     removeCharacter(characterId: $characterId) {
-//         _id
-//         username
-//         character_title
-//     }
-//   }
-// `;
+export const REMOVE_CHARACTER = gql`
+  mutation removeCharacter($characterId: ID!) {
+    removeCharacter(characterId: $characterId) {
+      _id
+      username
+      character_title
+    }
+  }
+`;
 
-// export const UPDATE_CHARACTER = gql`
-//   mutation addCharacter($characterId: ID!) {
-//     addCharacter(characterId: $characterId) {
-//         _id
-//         username
-//         character_title
-//     }
-//   }
-// `;
+export const UPDATE_CHARACTER = gql`
+  mutation addCharacter($characterId: ID!) {
+    addCharacter(characterId: $characterId) {
+      _id
+      username
+      character_title
+    }
+  }
+`;
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -55,4 +55,3 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
