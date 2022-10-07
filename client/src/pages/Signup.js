@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
-import Auth from "../utils/auth";
+import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: "",
-    email: "",
-    password: "",
+    username: '',
+    email: '',
+    password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -21,35 +21,6 @@ const Signup = () => {
       [name]: value,
     });
   };
-
-  const [userData, setUserData] = useState({});
-
-  const userDataLength = Object.keys(userData).length;
-
-  useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-        if (!token) {
-          return false;
-        }
-
-        const response = await ADD_USER(token);
-
-        if (!response.ok) {
-          throw new Error("something went wrong!");
-        }
-
-        const user = await response.json();
-        setUserData(user);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    getUserData();
-  }, [userDataLength]);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -68,52 +39,57 @@ const Signup = () => {
 
   return (
     <main>
-      <div className="card">
-        <h4 className="card-header">Sign Up</h4>
-        <div className="card-body">
-          {data ? (
-            <p>
-              <Link to="/">back to the homepage.</Link>
-            </p>
-          ) : (
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Username"
-                name="username"
-                type="text"
-                value={formState.name}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Email"
-                name="email"
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button
-                className="submit-button"
-                style={{ cursor: "pointer" }}
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
-          )}
+        <div className="card">
+          <h4 className="card-header">Sign Up</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="Username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="submit-button"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
 
-          {error && <div className="error-message">{error.message}</div>}
+            {error && (
+              <div className="error-message">
+                {error.message}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
     </main>
   );
 };
