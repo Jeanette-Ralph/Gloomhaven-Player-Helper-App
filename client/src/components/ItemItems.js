@@ -1,9 +1,6 @@
 import React, { useReducer, useContext } from "react";
-
 import { createUseStyles } from "react-jss";
-import UserContext from "./User";
-
-import { ItemContext } from "./ItemMaker";
+import { ItemContext } from "./ItemMakerProvider";
 
 const useStyles = createUseStyles({
   add: {
@@ -35,8 +32,6 @@ const reducer = (key) => key + 1;
 export default function ItemList({ title, image }) {
   const classes = useStyles();
   const { setItem } = useContext(ItemContext);
-  const user = useContext(UserContext);
-  // const active_cards = user.active.includes(title, image);
   const [id, updateId] = useReducer(reducer, 0);
   function update() {
     setItem({
@@ -46,14 +41,9 @@ export default function ItemList({ title, image }) {
     });
     updateId();
   }
+
   return (
     <div className={classes.wrapper}>
-      {/* <span
-        className={classes.favorite}
-        aria-label={favorite ? "Favorite" : "Not Favorite"}
-      >
-        {favorite ? "⚔️" : ""}
-      </span> */}
       <button className={classes.add} onClick={update}>
         <span className={classes.image} role="img" aria-label={title}>
           {image}
@@ -62,8 +52,3 @@ export default function ItemList({ title, image }) {
     </div>
   );
 }
-
-// CardList.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-// };

@@ -25,7 +25,7 @@ db.once("open", async () => {
 
     // need to seed the character with the card data
 
-    for (let i = 0; i < CardsSeeds.length; i++) {
+    for (let i = 0; i < cardsSeeds.length; i++) {
       const { _id, character_card } = await Player_Cards.create(cardsSeeds[i]);
       const characterUpdate = await Character.findOneAndUpdate(
         { character_title: character_card },
@@ -37,7 +37,7 @@ db.once("open", async () => {
       );
     }
   } catch (err) {
-    console.log(error);
+    console.log(err);
   }
   console.log("all done!");
   process.exit(0);

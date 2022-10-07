@@ -13,8 +13,8 @@ const resolvers = {
       return Character.find();
     },
     // get cards and filter by character_title
-    character: async (parent, { character }) => {
-      return Character.findOne({ character }).populate("cards");
+    character: async (parent, { characterId }) => {
+      return Character.findOne({ _id: characterId }).populate("cards");
     },
     items: async () => {
       return Items.find();

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { createUseStyles } from "react-jss";
-
-import { DeckContext } from "./DeckMaker";
+import { DeckContext } from "./DeckMakerProvider";
 
 const useStyles = createUseStyles({
   list: {

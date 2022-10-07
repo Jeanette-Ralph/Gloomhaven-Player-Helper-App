@@ -16,6 +16,7 @@ import Signup from "./pages/Signup";
 import FakeMatList from "./components/FakeMat";
 import DeckProvider from "./providers/DeckContext";
 import Items from "./pages/Items";
+import DeckMakerProvider from "./components/DeckMakerProvider";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -49,17 +50,17 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Header />
-          {/* <Player_Cards> */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cards" element={<Player_Cards />} />
-            <Route path="/mat" element={<PLAY_MAT />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/items" element={<Items />} />
-            <Route path="*" element={<Login />} />
-          </Routes>
-          {/* </Player_Cards> */}
+          <DeckMakerProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cards" element={<Player_Cards />} />
+              <Route path="/mat" element={<PLAY_MAT />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/items" element={<Items />} />
+              <Route path="*" element={<Login />} />
+            </Routes>
+          </DeckMakerProvider>
         </div>
       </Router>
     </ApolloProvider>
