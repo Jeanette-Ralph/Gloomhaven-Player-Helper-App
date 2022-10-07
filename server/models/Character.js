@@ -11,7 +11,7 @@ const characterSchema = new Schema({
   cards: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Player_Cards",
+      ref: "cards",
     },
   ],
 });

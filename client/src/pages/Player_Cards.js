@@ -19,10 +19,11 @@ const SavedPlayerCards = () => {
         }
 
         const response = await QUERY_CARDS(token);
+        console.log(response);
 
-        if (!response.ok) {
-          throw new Error("something went wrong!");
-        }
+        // if (!response.ok) {
+        //   throw new Error("something went wrong!");
+        // }
 
         const user = await response.json();
         setUserData(user);
@@ -33,21 +34,6 @@ const SavedPlayerCards = () => {
 
     getUserData();
   }, [userDataLength]);
-
-  const Cards = (props) => {
-    const { loading, data } = useQuery(QUERY_CARDS);
-    console.log("--------------playercards-----------", props);
-    const cards = data?.cards || [];
-    return (
-      <div>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <DeckMaker cards={cards}>{props.children}</DeckMaker>
-        )}
-      </div>
-    );
-  };
 
   // const Cards = (props) => {
   //   const { loading, data } = useQuery(QUERY_CARDS);
@@ -63,4 +49,19 @@ const SavedPlayerCards = () => {
   //     </div>
   //   );
 };
-export default SavedPlayerCards;
+
+const Cards = (props) => {
+  const { loading, data } = useQuery(QUERY_CARDS);
+  console.log("--------------playercards-----------", props);
+  const cards = data?.cards || [];
+  return (
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <DeckMaker cards={cards}>{props.children}</DeckMaker>
+      )}
+    </div>
+  );
+};
+export default Cards;
