@@ -8,7 +8,7 @@ const typeDefs = gql`
     password: String
     characters: [Character]
     items: [Items]
-    cards: [Player_Cards]
+    cards: [Cards]
   }
 
   type Character {
@@ -20,7 +20,7 @@ const typeDefs = gql`
     prosperity_level: Int
     character_title: String
     image: String
-    cards: [Player_Cards]
+    cards: [Cards]
   }
 
   type Items {
@@ -31,7 +31,7 @@ const typeDefs = gql`
     image: String
   }
 
-  type Player_Cards {
+  type Cards {
     _id: ID
     title: String
     image: String
@@ -59,7 +59,7 @@ const typeDefs = gql`
     character(characterId: ID!): Character
     characters: [Character]
     items: [Items]!
-    cards: [Player_Cards]!
+    cards: [Cards]!
     goals: [Goals]!
   }
 
@@ -71,6 +71,6 @@ const typeDefs = gql`
     removeCharacter(characterId: ID!, userId: ID!): Character
   }
 `;
-// updateCards(characterId: ID!, cardId: ID!): Player_Cards
+// updateCards(characterId: ID!, cardId: ID!): Cards
 
 module.exports = typeDefs;

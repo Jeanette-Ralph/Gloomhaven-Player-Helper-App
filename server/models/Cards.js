@@ -16,5 +16,5 @@ const cardsSchema = new Schema({
   ],
 });
 
-const Player_Cards = model("Card", cardsSchema);
-module.exports = Player_Cards;
+const Cards = model("cards", cardsSchema);
+module.exports = Cards;
