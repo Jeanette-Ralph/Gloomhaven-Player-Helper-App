@@ -36,11 +36,28 @@ export default function CardList({ image, title }) {
   function update() {
     setDeck({
       title,
-      id: `${title}-${id}`,
+      id: `${id}`,
       image,
     });
     updateId();
   }
+
+  // const removeCard = () => {
+  //   setDeck((current) => {
+  //     const { image, title, id, ...rest } = current;
+  //     return rest;
+  //   });
+  // };
+
+  const removeCard = () => {
+    setDeck((current) => {
+      const copy = { ...current };
+      delete copy["image"];
+      return copy;
+    });
+    updateId();
+  };
+
   return (
     <div className={classes.wrapper}>
       <h3>{title}</h3>
@@ -50,6 +67,7 @@ export default function CardList({ image, title }) {
           {image}
         </span>
       </button>
+      <button onClick={removeCard}>Remove Card From Hand</button>
     </div>
   );
 }
