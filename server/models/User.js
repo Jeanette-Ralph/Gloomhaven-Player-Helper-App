@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const characterSchema = require("./Character");
 const itemSchema = require("./Items");
-const cardsSchema = require("./Player_Cards");
+const cardsSchema = require("./Cards");
 
 const userSchema = new Schema(
   {
@@ -24,7 +24,7 @@ const userSchema = new Schema(
       required: true,
     },
 
-    // set items, player_cards, character to be an array of data that adheres to the userSchema
+    // set items, cards, character to be an array of data that adheres to the userSchema
     characters: [
       {
         type: Schema.Types.ObjectId,
@@ -42,7 +42,7 @@ const userSchema = new Schema(
     cards: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Player_Cards",
+        ref: "Cards",
       },
     ],
   },
