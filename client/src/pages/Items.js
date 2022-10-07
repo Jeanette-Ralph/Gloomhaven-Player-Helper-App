@@ -10,6 +10,9 @@ const Items = (props) => {
   const items = data?.items || [];
   return (
     <div>
+      <div>
+        <CharacterMenu />
+      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (
@@ -19,7 +22,3 @@ const Items = (props) => {
   );
 };
 export default Items;
-
-// <div>
-//   <CharacterMenu />
-// </div>
