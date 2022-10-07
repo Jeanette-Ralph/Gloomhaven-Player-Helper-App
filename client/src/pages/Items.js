@@ -42,9 +42,6 @@ const Items = (props) => {
   const items = data?.items || [];
   return (
     <div>
-      <div>
-        <CharacterMenu />
-      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (
@@ -53,5 +50,8 @@ const Items = (props) => {
     </div>
   );
 };
+export default Items;
 
-export default SavedItems;
+// <div>
+//   <CharacterMenu />
+// </div>
