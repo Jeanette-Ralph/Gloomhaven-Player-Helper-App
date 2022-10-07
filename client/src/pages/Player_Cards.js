@@ -9,6 +9,8 @@ import { QUERY_CARDS } from "../utils/queries";
 
   //const userDataLength = Object.keys(userData).length;
 
+
+  
   const Cards = (props) => {
     const { loading, data } = useQuery(QUERY_CARDS);
     console.log("--------------playercards-----------", props);
@@ -22,6 +24,7 @@ import { QUERY_CARDS } from "../utils/queries";
         )}
       </div>
     );
+  };
 
 //   useEffect(() => {
 //     const getUserData = async () => {
