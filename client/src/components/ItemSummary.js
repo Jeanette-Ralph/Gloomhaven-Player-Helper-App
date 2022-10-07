@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { createUseStyles } from "react-jss";
-
-import { ItemContext } from "./ItemMaker";
+import { ItemContext } from "./itemMakerProvider";
 
 const useStyles = createUseStyles({
   list: {
@@ -28,10 +27,10 @@ export default function ItemSummary(props) {
     <div className={classes.wrapper}>
       <h2>Your item</h2>
       <ul className={classes.list}>
-        {item.map(({ title, id, image }) => (
-          <li key={id}>
-            {title}
-            {image}
+        {item.map((props) => (
+          <li key={props.id}>
+            {props.title}
+            {props.image}
           </li>
         ))}
       </ul>

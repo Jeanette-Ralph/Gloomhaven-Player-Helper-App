@@ -16,7 +16,7 @@ export const QUERY_CARDS = gql`
 
 export const QUERY_CHARACTERS = gql`
   query getCharacters {
-    character {
+    characters {
       character_title
       image
       level
@@ -24,6 +24,10 @@ export const QUERY_CHARACTERS = gql`
       gold
       xp
       prosperity_level
+      cards {
+        image
+        title
+      }
     }
   }
 `;

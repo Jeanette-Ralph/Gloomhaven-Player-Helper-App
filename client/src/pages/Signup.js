@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
@@ -21,6 +21,35 @@ const Signup = () => {
       [name]: value,
     });
   };
+
+  const [userData, setUserData] = useState({});
+
+  const userDataLength = Object.keys(userData).length;
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) {
+          return false;
+        }
+
+        const response = await ADD_USER(token);
+
+        if (!response.ok) {
+          throw new Error("something went wrong!");
+        }
+
+        const user = await response.json();
+        setUserData(user);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getUserData();
+  }, [userDataLength]);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
