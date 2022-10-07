@@ -6,7 +6,7 @@ const Play_Mat = (props) => {
   return (
     <div>
       <CardSummary cards={props.cards} deck={props.deck} />
-      <ItemSummary items={props.items} item={props.items} />
+      {/* <ItemSummary items={props.items} item={props.items} /> */}
     </div>
   );
 };
