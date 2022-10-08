@@ -1,21 +1,17 @@
-// import * as React from "react";
-// Import React Router Link component for internal hyperlinks
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
+import "../App.css";
 
 const pages = ["Cards", "Mat", "Login"];
 
@@ -47,8 +43,11 @@ const ResponsiveAppBar = () => {
       <AppBar
         position="static"
         sx={{
-          display: { xs: "none", md: "flex", backgroundColor: "#0D0D0B" },
-          color: "#0D0D0B",
+          display: {
+            xs: "none",
+            md: "flex",
+            backgroundColor: "black",
+          },
           mr: 1,
         }}
       >
@@ -57,7 +56,11 @@ const ResponsiveAppBar = () => {
             <Box
               sx={{
                 flexGrow: 1,
-                display: { xs: "flex", md: "none", color: "#F2E0C9" },
+                display: {
+                  xs: "flex",
+                  md: "none",
+                  color: "white",
+                },
               }}
             >
               <Menu
@@ -99,7 +102,7 @@ const ResponsiveAppBar = () => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -108,7 +111,11 @@ const ResponsiveAppBar = () => {
             <Box
               sx={{
                 flexGrow: 1,
-                display: { xs: "none", md: "flex", color: "#F2E0C9" },
+                display: {
+                  xs: "none",
+                  md: "flex",
+                  color: "#F2E0C9",
+                },
               }}
             >
               {Auth.loggedIn() ? (
@@ -117,7 +124,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-                    <Link className="text-dark" to="/cards">
+                    <Link className="nav-link" to="/cards">
                       Cards
                     </Link>
                   </Button>
@@ -125,7 +132,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-                    <Link className="text-dark" to="/mat">
+                    <Link className="nav-link" to="/mat">
                       Mat
                     </Link>
                   </Button>
@@ -134,7 +141,7 @@ const ResponsiveAppBar = () => {
                     sx={{ my: 2, display: "block", color: "#F2E0C9" }}
                   >
                     {/* Logout */}
-                    <Link className="text-dark" onClick={logout}>
+                    <Link className="nav-link" onClick={logout}>
                       Logout
                     </Link>
                   </Button>
@@ -145,7 +152,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, display: "block", color: "#F2E0C9" }}
                   >
-                    <Link className="text-dark" to="/login">
+                    <Link className="nav-link" to="/login">
                       Login
                     </Link>
                   </Button>
@@ -154,7 +161,7 @@ const ResponsiveAppBar = () => {
                     sx={{ my: 2, color: "#F2E0C9", display: "block" }}
                   >
                     {/* Sign Up */}
-                    <Link className="text-dark" to="/signup">
+                    <Link className="nav-link" to="/signup">
                       Sign Up
                     </Link>
                   </Button>

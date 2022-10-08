@@ -68,7 +68,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addCharacter(characterId: ID!, userId: ID!): Character
     removeCharacter(characterId: ID!, userId: ID!): Character
-    updateUser(userId: ID!, characterId:ID!): User
+    updateUser(userId: ID!, characterId: ID!): User
   }
 `;
 
