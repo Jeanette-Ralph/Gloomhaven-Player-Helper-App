@@ -64,10 +64,6 @@ export default function CardList({ image, title }) {
           {image}
         </span>
       </button>
-      {/* <span {...props} role="button" tabIndex="0">
-        ✗
-      </span> */}
-      {/* <button onClick={removeCard}>✗</button> */}
     </div>
   );
 }

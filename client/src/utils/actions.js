@@ -1,2 +1,0 @@
-export const REMOVE_CARD = "UPDATE_CARD_DECK";
-export const REMOVE_ITEM = "UPDATE_ITEM_HAND";

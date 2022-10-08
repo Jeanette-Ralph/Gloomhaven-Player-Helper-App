@@ -5,7 +5,6 @@ import { QUERY_ITEMS } from "../utils/queries";
 
 const Items = (props) => {
   const { loading, data } = useQuery(QUERY_ITEMS);
-  console.log("--------------item cards-----------", props);
   const items = data?.items || [];
   return (
     <div>
