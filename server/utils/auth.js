@@ -13,7 +13,6 @@ module.exports = {
 
     if (!token) {
       return req;
-      // return res.status(400).json({ message: 'You have no token!' });
     }
 
     try {
@@ -21,7 +20,6 @@ module.exports = {
       req.user = data;
     } catch {
       console.log("Invalid token");
-      // return res.status(400).json({ message: 'invalid token!' });
     }
 
     return req;
