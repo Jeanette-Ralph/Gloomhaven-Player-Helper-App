@@ -1,0 +1,37 @@
+[
+    {
+        "title":"Winged Shoes",
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 2,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_100/v1664640337/gloomhaven-user-app/gh-002-winged-shoes.0ee60100_y1upo2.png"
+},
+{
+    "title":"Boots of Striding",
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 3,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_100/v1664640327/gloomhaven-user-app/gh-001-boots-of-striding.91c95d80_cyeohx.png"
+},
+{
+    "title":"Cloak of Invisibility",
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 3,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_100/v1665196754/gloomhaven-user-app/gh-005-cloak-of-invisibility.164c3a3b_i2cpim.png"
+},
+{
+    "title":"Iron Helm",
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 3,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_100/v1665196750/gloomhaven-user-app/gh-007-iron-helmet.afb09eb2_nu23c1.png"
+},
+{
+    "title":"Poison Dagger",
+    "in_store": true,
+    "spent": false,
+    "prosperity_level": 3,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_100/v1665196739/gloomhaven-user-app/gh-011-poison-dagger.497f5017_t3pvqu.png"
+}
+]

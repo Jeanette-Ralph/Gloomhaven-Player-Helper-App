@@ -1,0 +1,9 @@
+runtime: custom
+env: flex
+manual_scaling:
+  instances: 1
+resources:
+  memory_gb: 1
+env_variables:
+  NODE_ENV: production
+  MONGODB_URI: mongodb+srv://admin:OuZDkF7V1B618g7k@cluster0.nbjhy6i.mongodb.net/?retryWrites=true&w=majority

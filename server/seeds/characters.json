@@ -1,0 +1,21 @@
+[{
+    
+    "character_title": "Berserker",
+    "level": 1,
+    "hp": 10,
+    "gold": 0,
+    "xp": 0,
+    "prosperity_level": 1,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_400/v1665194500/gloomhaven-user-app/gloomhaven-berserker-board-health-xp-1000-12042021.jpg_vemw7x.webp"
+},
+{
+    
+    "character_title": "Sunkeeper",
+    "level": 1,
+    "hp": 10,
+    "gold": 0,
+    "xp": 0,
+    "prosperity_level": 1,
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_400/v1665190636/gloomhaven-user-app/87n7fXyNHeHgCTscfBYfy8sc9hSkfltuh8YFFDGQ-vw_atrsvr.webp"
+}
+]
