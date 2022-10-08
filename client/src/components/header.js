@@ -132,9 +132,10 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-
                     <Link className="nav-link" to="/mat">
-                    <Link className="text-dark" to="/items">
+                      Mat
+                    </Link>
+                    <Link className="nav-link" to="/items">
                       Items
                     </Link>
                   </Button>
@@ -143,7 +144,6 @@ const ResponsiveAppBar = () => {
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     <Link className="text-dark" to="/mat">
-
                       Mat
                     </Link>
                   </Button>
