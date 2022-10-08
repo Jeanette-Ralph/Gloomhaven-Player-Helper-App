@@ -1,2 +1,2 @@
-Gloomhaven Player Helper App
+
 
