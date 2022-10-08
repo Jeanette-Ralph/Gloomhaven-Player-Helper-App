@@ -1,7 +1,6 @@
 import React, { useReducer, useContext } from "react";
 import { createUseStyles } from "react-jss";
 import { DeckContext } from "./DeckMakerProvider";
-import { REMOVE_CARD } from "../utils/actions";
 import { v4 as uuid } from "uuid";
 
 const useStyles = createUseStyles({
@@ -45,14 +44,6 @@ export default function CardList({ image, title }) {
       image,
     });
     updateId();
-  }
-
-  function removeCard(title) {
-    dispatch({
-      type: REMOVE_CARD,
-      currentCategory: title,
-    });
-    dispatchTitle();
   }
 
   return (
