@@ -6,8 +6,9 @@ import { QUERY_CARDS } from "../utils/queries";
 
 const Cards = (props) => {
   // auth code
-
+  // i can do specific user query and then drill through the user props
   const { loading, data } = useQuery(QUERY_CARDS);
+
   console.log("--------------playercards-----------", props);
   const cards = data?.cards || [];
   return (

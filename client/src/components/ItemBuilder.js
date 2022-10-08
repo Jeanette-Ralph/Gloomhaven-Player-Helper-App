@@ -10,6 +10,7 @@ const useStyles = createUseStyles({
     flexWrap: "wrap",
     padding: [5, 30],
     justifyContent: "center",
+    animate__animated: "animate__fadeIn",
   },
 });
 
