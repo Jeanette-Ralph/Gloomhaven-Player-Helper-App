@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
 
   wrapper: {
     borderTop: "black solid 1px",
-    display: "flex",
+    display: "block",
     padding: 40,
   },
 });
