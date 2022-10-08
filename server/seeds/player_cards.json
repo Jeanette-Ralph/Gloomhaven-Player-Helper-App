@@ -1,17 +1,17 @@
 [
     {
-        "title":"Numb the Pain",
-        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_148/v1664494626/gloomhaven-user-app/numb_the_pain_mdkhsa.jpg",
+        "title":"At All Cost",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/At_All_Costs_m0bjge.jpg",
         "in_hand":true,
         "lost":false,
         "discard":false,
         "active":false,
         "card_level":5,
-        "character_card":"berserker"
+        "character_card":"sunkeeper"
     },
     {
-        "title":"Bounce Back",
-        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/v1664924264/gloomhaven-user-app/images_ro1mjz.jpg",
+        "title":"Strength in Agony",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Strenght_in_Agony_qfdaox.jpg",
         "in_hand":false,
         "lost":false,
         "discard":false,
@@ -20,13 +20,103 @@
         "character_card":"berserker"
     },
     {
-    "title":"Defiance of Death",
-    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1664640365/gloomhaven-user-app/CVIUHZq_edipir.jpg",
+    "title":"Set for the Charge",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Set_for_the_Charge_so1x2v.jpg",
     "in_hand":false,
     "lost":false,
     "discard":false,
     "active":false,
     "card_level":1,
     "character_card":"sunkeeper"
+},
+{
+    "title":"Cauterize",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Cauterize_hzprvy.jpg",
+    "in_hand":false,
+    "lost":false,
+    "discard":false,
+    "active":false,
+    "card_level":1,
+    "character_card":"berserker"
+},
+{
+    "title":"Blood Pact",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Blood_Pact_v4mgmv.jpg",
+    "in_hand":false,
+    "lost":false,
+    "discard":false,
+    "active":false,
+    "card_level":1,
+    "character_card":"berserker"
+},
+{
+    "title":"Tip of the Spear",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Tip_of_the_Spear_yvhx0b.jpg",
+    "in_hand":false,
+    "lost":false,
+    "discard":false,
+    "active":false,
+    "card_level":1,
+    "character_card":"sunkeeper"
+},
+{
+    "title":"Defiance of Death",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197763/gloomhaven-user-app/Defiance_of_Death_mrg3rx.jpg",
+    "in_hand":true,
+    "lost":false,
+    "discard":false,
+    "active":false,
+    "card_level":5,
+    "character_card":"berserker"
+},
+{
+    "title":"Resolute Stand",
+    "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Resolute_Stand_pkynxa.jpg",
+    "in_hand":false,
+    "lost":false,
+    "discard":false,
+    "active":false,
+    "card_level":1,
+    "character_card":"berserker"
+},
+{
+"title":"Combined Effort",
+"image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197763/gloomhaven-user-app/Combined_Effort_yhflza.jpg",
+"in_hand":false,
+"lost":false,
+"discard":false,
+"active":false,
+"card_level":1,
+"character_card":"sunkeeper"
+},
+{
+"title":"Regroup",
+"image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Regroup_qcc00j.jpg",
+"in_hand":false,
+"lost":false,
+"discard":false,
+"active":false,
+"card_level":1,
+"character_card":"sunkeeper"
+},
+{
+"title":"Javelin",
+"image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Javelin_wkpape.jpg",
+"in_hand":false,
+"lost":false,
+"discard":false,
+"active":false,
+"card_level":1,
+"character_card":"sunkeeper"
+},
+{
+"title":"Growing Rage",
+"image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197763/gloomhaven-user-app/Growing_Rage_d51kfy.jpg",
+"in_hand":false,
+"lost":false,
+"discard":false,
+"active":false,
+"card_level":1,
+"character_card":"berserker"
 }
 ]
