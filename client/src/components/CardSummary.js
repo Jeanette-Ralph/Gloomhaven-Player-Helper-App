@@ -22,8 +22,6 @@ const useStyles = createUseStyles({
 export default function CardSummary() {
   const classes = useStyles();
   const { deck } = useContext(DeckContext);
-
-  console.log("card summary", deck);
   return (
     <div className={classes.wrapper}>
       <h2>Your Deck</h2>

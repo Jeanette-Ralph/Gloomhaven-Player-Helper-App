@@ -12,15 +12,12 @@ export default function Characters() {
   });
   const { loading, error, data } = useQuery(QUERY_CHARACTERS);
 
-  console.log("-----character----", data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
   function handleCharacterChange(character) {
-    console.log(data);
     setState(
       data.characters.filter((char) => {
-        console.log(char);
         return char.character_title === character;
       })[0]
     );
