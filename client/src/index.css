@@ -15,9 +15,43 @@ code {
     monospace;
 }
 
-h1 {
-  font-family: Pirata One,
-  
+.app-title {
+  font-family: 'Pirata One';
+  text-align: center;
+  font-size: 100px;
+  justify-content: center;
+  padding: 150px;
 }
 
+.card{
+  justify-content: center;
+  text-align: center;
+  font-family: 'Pirata One';
+  font-size: 30px;
+  margin: auto;
+  padding: 40px;}
 
+.card-body {
+ display: flex;
+ flex-direction: column;
+}
+
+.submit-button {
+  background-color: #F2A922; /* Green */
+  border: none;
+  color: white;
+  padding: 15px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+.form-input {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

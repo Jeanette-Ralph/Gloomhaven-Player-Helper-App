@@ -17,6 +17,7 @@ import Items from "./pages/Items";
 import DeckMakerProvider from "./components/DeckMakerProvider";
 import ItemMakerProvider from "./components/ItemMakerProvider";
 import UserProvider from "./utils/UserContext";
+import Footer from "../src/components/footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -56,12 +57,6 @@ function App() {
   // }, []);
 
   return (
-    // <DeckProvider>
-    //   <div className="App">
-    //     <FakeMatList />
-    //   </div>
-    // </DeckProvider>
-
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
