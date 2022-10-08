@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-
-import Auth from '../utils/auth';
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
+import UserProvider, { UserContext } from "../utils/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+  const { setCurrentUser, currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  console.log(currentUser);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -26,61 +31,62 @@ const Login = (props) => {
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token);
+      await Auth.login(data.login.token);
+
+      console.log("CURRENT USER: ", currentUser);
+      console.log(navigate);
+      await setCurrentUser(data.login.user);
+      navigate.push(navigate.location.replace("login", "mat"));
     } catch (e) {
       console.error(e);
     }
 
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
   return (
     <main className="flex-row justify-center mb-4">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <div>
-                <Link to="/mat"></Link>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="submit-button"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+      <div className="card">
+        <h4 className="card-header">Login</h4>
+        <div className="card-body">
+          {data ? (
+            <div>
+              <Link to="/mat"></Link>
+            </div>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button
+                className="submit-button"
+                style={{ cursor: "pointer" }}
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+          )}
 
-            {error && (
-              <div className="error-message">
-                {error.message}
-              </div>
-            )}
-          </div>
+          {error && <div className="error-message">{error.message}</div>}
         </div>
+      </div>
     </main>
   );
 };
