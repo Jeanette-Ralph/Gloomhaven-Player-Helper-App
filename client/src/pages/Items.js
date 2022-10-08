@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemMaker from "../components/ItemMaker";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS } from "../utils/queries";

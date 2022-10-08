@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
     position: "relative",
     textAlign: "center",
     textTransform: "capitalize",
-    width: 200,
+    width: 100,
   },
 });
 

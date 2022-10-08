@@ -1,0 +1,52 @@
+[
+    {
+        "title":"At All Cost",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/At_All_Costs_m0bjge.jpg",
+        "in_hand":true,
+        "lost":false,
+        "discard":false,
+        "active":false,
+        "card_level":5,
+        "character_card":"sunkeeper"
+    }, 
+    {
+        "title":"Set for the Charge",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Set_for_the_Charge_so1x2v.jpg",
+        "in_hand":false,
+        "lost":false,
+        "discard":false,
+        "active":false,
+        "card_level":1,
+        "character_card":"sunkeeper"
+    },
+    {
+        "title":"Tip of the Spear",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Tip_of_the_Spear_yvhx0b.jpg",
+        "in_hand":false,
+        "lost":false,
+        "discard":false,
+        "active":false,
+        "card_level":1,
+        "character_card":"sunkeeper"
+    },
+    {
+        "title":"Combined Effort",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197763/gloomhaven-user-app/Combined_Effort_yhflza.jpg",
+        "in_hand":false,
+        "lost":false,
+        "discard":false,
+        "active":false,
+        "card_level":1,
+        "character_card":"sunkeeper"
+        },
+        {
+        "title":"Regroup",
+        "image":"https://res.cloudinary.com/dggvyhv27/image/upload/c_scale,w_150/v1665197764/gloomhaven-user-app/Regroup_qcc00j.jpg",
+        "in_hand":false,
+        "lost":false,
+        "discard":false,
+        "active":false,
+        "card_level":1,
+        "character_card":"sunkeeper"
+        },
+]

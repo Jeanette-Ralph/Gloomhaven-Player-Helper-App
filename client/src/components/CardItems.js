@@ -2,6 +2,7 @@ import React, { useReducer, useContext } from "react";
 import { createUseStyles } from "react-jss";
 import { DeckContext } from "./DeckMakerProvider";
 import { REMOVE_CARD } from "../utils/actions";
+import { v4 as uuid } from "uuid";
 
 const useStyles = createUseStyles({
   add: {
@@ -9,6 +10,7 @@ const useStyles = createUseStyles({
     border: "none",
     cursor: "pointer",
   },
+
   favorite: {
     fontSize: 20,
     position: "absolute",
@@ -20,12 +22,12 @@ const useStyles = createUseStyles({
   },
   wrapper: {
     border: "lightgrey solid 1px",
-    margin: 20,
-    padding: 25,
+    margin: 10,
+    padding: 15,
     position: "relative",
     textAlign: "center",
     textTransform: "capitalize",
-    width: 200,
+    width: 175,
   },
 });
 
@@ -39,7 +41,7 @@ export default function CardList({ image, title }) {
   function update() {
     setDeck({
       title,
-      id: `${id}`,
+      id: uuid(),
       image,
     });
     updateId();
@@ -65,7 +67,7 @@ export default function CardList({ image, title }) {
       {/* <span {...props} role="button" tabIndex="0">
         ✗
       </span> */}
-      <button onClick={removeCard}>✗</button>
+      {/* <button onClick={removeCard}>✗</button> */}
     </div>
   );
 }
