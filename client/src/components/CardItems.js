@@ -1,6 +1,7 @@
 import React, { useReducer, useContext } from "react";
 import { createUseStyles } from "react-jss";
 import { DeckContext } from "./DeckMakerProvider";
+import { REMOVE_CARD } from "../utils/actions";
 
 const useStyles = createUseStyles({
   add: {
@@ -33,6 +34,8 @@ export default function CardList({ image, title }) {
   const classes = useStyles();
   const { setDeck } = useContext(DeckContext);
   const [id, updateId] = useReducer(reducer, 0);
+  const { dispatch } = useContext(DeckContext);
+  const [, dispatchTitle] = useReducer(reducer, 0);
   function update() {
     setDeck({
       title,
@@ -42,21 +45,13 @@ export default function CardList({ image, title }) {
     updateId();
   }
 
-  // const removeCard = () => {
-  //   setDeck((current) => {
-  //     const { image, title, id, ...rest } = current;
-  //     return rest;
-  //   });
-  // };
-
-  const removeCard = () => {
-    setDeck((current) => {
-      const copy = { ...current };
-      delete copy["image"];
-      return copy;
+  function removeCard(title) {
+    dispatch({
+      type: REMOVE_CARD,
+      currentCategory: title,
     });
-    updateId();
-  };
+    dispatchTitle();
+  }
 
   return (
     <div className={classes.wrapper}>
@@ -67,7 +62,10 @@ export default function CardList({ image, title }) {
           {image}
         </span>
       </button>
-      <button onClick={removeCard}>Remove Card From Hand</button>
+      {/* <span {...props} role="button" tabIndex="0">
+        ✗
+      </span> */}
+      <button onClick={removeCard}>✗</button>
     </div>
   );
 }

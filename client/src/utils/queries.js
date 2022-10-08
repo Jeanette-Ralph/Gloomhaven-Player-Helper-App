@@ -17,6 +17,7 @@ export const QUERY_CARDS = gql`
 export const QUERY_CHARACTERS = gql`
   query getCharacters {
     characters {
+      _id
       character_title
       image
       level
