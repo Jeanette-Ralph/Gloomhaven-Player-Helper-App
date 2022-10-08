@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         position="static"
         sx={{
           display: { xs: "none", md: "flex", backgroundColor: "#0D0D0B" },
-          color: "#0D0D0B",
+          color: "#white",
           mr: 1,
         }}
       >
