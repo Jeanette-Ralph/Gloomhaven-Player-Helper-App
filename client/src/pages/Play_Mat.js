@@ -119,10 +119,10 @@ const Play_Mat = (props) => {
                           ref={provided.innerRef}
                           style={{
                             background: snapshot.isDraggingOver
-                              ? "lightblue"
-                              : "lightgrey",
+                              ? "#733527"
+                              : "#F23E2E",
                             padding: 4,
-                            width: 250,
+                            width: 180,
                             minHeight: 500,
                           }}
                         >
@@ -145,8 +145,8 @@ const Play_Mat = (props) => {
                                         margin: "0 0 8px 0",
                                         minHeight: "50px",
                                         backgroundColor: snapshot.isDragging
-                                          ? "#263B4A"
-                                          : "#456C86",
+                                          ? "#D9923B"
+                                          : "#BF4E24",
                                         color: "white",
                                         ...provided.draggableProps.style,
                                       }}
