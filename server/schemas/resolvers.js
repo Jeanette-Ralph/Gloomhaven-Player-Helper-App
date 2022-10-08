@@ -12,7 +12,6 @@ const resolvers = {
     characters: async () => {
       return Character.find();
     },
-    // get cards and filter by character_title
     character: async (parent, { characterId }) => {
       return Character.findOne({ _id: characterId }).populate("cards");
     },
@@ -23,9 +22,6 @@ const resolvers = {
     cards: async () => {
       return Cards.find();
     },
-    // goals: async () => {
-    //   return Goals.find();
-    // },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -33,6 +29,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
@@ -45,6 +42,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
     addCharacter: async (parent, { userId }, context) => {
       if (context.user) {
         const character = await Character.create({
@@ -58,6 +56,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
     removeCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
         const character = await Character.findOneAndDelete({
@@ -71,11 +70,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // updating character except title
-    updateCharacter: async (parent, { characterId }, context) => {
+
+    updateUser: async (parent, { userId, characterId }, context) => {
       if (context.user) {
         const character = await Character.create({
-          characterId,
+          _id: characterId,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -85,20 +84,6 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-
-    // updateCard: async (parent, { cardId }, context) => {
-    //   if (context.character) {
-    //     const card = await Card.create({
-    //       cardId,
-    //     });
-    //     await Character.findOneAndUpdate(
-    //       { _id: context.character._id },
-    //       { $addToSet: { characters: character._id } }
-    //     );
-    //     return character;
-    //   }
-    //   throw new AuthenticationError("You need to be logged in!");
-    // },
   },
 };
 module.exports = resolvers;

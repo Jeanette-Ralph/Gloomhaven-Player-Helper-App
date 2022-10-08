@@ -41,21 +41,7 @@ const client = new ApolloClient({
 
 function App() {
   const user = useContext(UserProvider);
-  console.log("TEST: ", user);
   const jwt = localStorage.getItem("token_id");
-
-  // useEffect(() => {
-  //   // if there's no current user but a session exists
-  //   const fetchUser = async () => {
-  //     // const fetchedUser = await your api call
-  //     // setCurrentUser(fetchedUser)
-  //   }
-  //   if ((!user.currentUser || Object.keys(user.currentUser) && jwt) {
-  //     // fetch and set the user
-  //     fetchUser();
-  //   }
-  // }, []);
-
   return (
     <ApolloProvider client={client}>
       <Router>
