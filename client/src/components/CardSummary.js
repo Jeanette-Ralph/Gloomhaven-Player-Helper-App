@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     flexWrap: "wrap",
     maxHeight: 50,
     "& li": {
-      width: 100,
+      width: 175,
     },
   },
   wrapper: {
@@ -19,10 +19,11 @@ const useStyles = createUseStyles({
   },
 });
 
-export default function CardSummary(props) {
+export default function CardSummary() {
   const classes = useStyles();
   const { deck } = useContext(DeckContext);
-  console.log(deck);
+
+  console.log("card summary", deck);
   return (
     <div className={classes.wrapper}>
       <h2>Your Deck</h2>

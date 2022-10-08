@@ -7,15 +7,17 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
+    padding: 45,
     maxHeight: 50,
     "& li": {
-      width: 100,
+      width: 125,
     },
   },
+
   wrapper: {
     borderTop: "black solid 1px",
     display: "flex",
-    padding: 25,
+    padding: 40,
   },
 });
 
@@ -28,10 +30,7 @@ export default function ItemSummary(props) {
       <h2>Your item</h2>
       <ul className={classes.list}>
         {item.map((item) => (
-          <li key={item.id}>
-            {item.title}
-            {item.image}
-          </li>
+          <li key={item.id}>{item.image}</li>
         ))}
       </ul>
     </div>
