@@ -17,7 +17,7 @@ import Items from "./pages/Items";
 import DeckMakerProvider from "./components/DeckMakerProvider";
 import ItemMakerProvider from "./components/ItemMakerProvider";
 import UserProvider from "./utils/UserContext";
-import Footer from "../src/components/footer";
+import Footer from "../src/components/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -78,6 +78,7 @@ function App() {
           </UserProvider>
         </div>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }

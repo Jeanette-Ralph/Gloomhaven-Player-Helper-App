@@ -18,7 +18,6 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
 const pages = ["Cards", "Mat", "Login"];
-const settings = ["Profile", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
   const logout = (event) => {
@@ -55,30 +54,6 @@ const ResponsiveAppBar = () => {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon
-              sx={{
-                display: { xs: "none", md: "flex", color: "#F2E0C9", svg: "" },
-                mr: 1,
-              }}
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex", color: "#F2E0C9" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
-
             <Box
               sx={{
                 flexGrow: 1,
@@ -119,7 +94,7 @@ const ResponsiveAppBar = () => {
               href=""
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "none", color: "#F2E0C9" },
+                display: { xs: "flex", md: "none", color: "white" },
                 flexGrow: 1,
                 fontFamily: "monospace",
                 fontWeight: 700,
@@ -186,35 +161,7 @@ const ResponsiveAppBar = () => {
                 </>
               )}
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            <Box sx={{ flexGrow: 0 }}></Box>
           </Toolbar>
         </Container>
       </AppBar>
