@@ -157,7 +157,6 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, display: "block", color: "#F2E0C9" }}
                   >
-                    {/* Logout */}
                     <Link className="nav-link" onClick={logout}>
                       Logout
                     </Link>
@@ -177,7 +176,6 @@ const ResponsiveAppBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "#F2E0C9", display: "block" }}
                   >
-                    {/* Sign Up */}
                     <Link className="nav-link" to="/signup">
                       Sign Up
                     </Link>

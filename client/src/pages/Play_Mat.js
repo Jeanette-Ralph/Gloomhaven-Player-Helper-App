@@ -175,14 +175,6 @@ const Play_Mat = (props) => {
       <ItemSummary items={props.items} item={props.items} />
     </>
   );
-
-  // console.log("----playmat------", props.cards);
-  // console.log(deck);
-  // return (
-  //   <div>
-  //     <CardSummary cards={props.cards} deck={props.deck} />
-  //   </div>
-  // );
 };
 
 export default Play_Mat;
