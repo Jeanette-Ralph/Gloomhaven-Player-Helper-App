@@ -34,12 +34,13 @@ export const REMOVE_CHARACTER = gql`
   }
 `;
 
-export const UPDATE_CHARACTER = gql`
-  mutation addCharacter($characterId: ID!) {
-    addCharacter(characterId: $characterId) {
+export const UPDATE_USER = gql`
+  mutation updateUser($userId: ID!) {
+    updateUser(userId: $userId, characterId: $characterId) {
       _id
-      username
-      character_title
+      character {
+        _id
+      }
     }
   }
 `;
