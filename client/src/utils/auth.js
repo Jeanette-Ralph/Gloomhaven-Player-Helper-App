@@ -28,7 +28,6 @@ class AuthService {
     localStorage.setItem("id_token", token);
     var decoded = jwt_decode(token);
     localStorage.setItem("user_id", decoded.data._id);
-    window.location.assign("/#mat");
   }
 
   logout() {
