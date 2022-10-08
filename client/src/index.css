@@ -29,7 +29,8 @@ code {
   font-family: 'Pirata One';
   font-size: 30px;
   margin: auto;
-  padding: 40px;}
+  padding: 40px;
+}
 
 .card-body {
  display: flex;
