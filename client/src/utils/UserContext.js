@@ -6,6 +6,7 @@ const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   const value = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser]);
 
+  console.log("currentUser", currentUser);
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 

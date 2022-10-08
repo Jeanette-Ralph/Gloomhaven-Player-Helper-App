@@ -41,7 +41,7 @@ const client = new ApolloClient({
 function App() {
   const user = useContext(UserProvider);
   console.log("TEST: ", user);
-  const jwt = localStorage.getItem('token_id');
+  const jwt = localStorage.getItem("token_id");
 
   // useEffect(() => {
   //   // if there's no current user but a session exists
@@ -61,10 +61,11 @@ function App() {
     //     <FakeMatList />
     //   </div>
     // </DeckProvider>
-    <UserProvider>
-      <ApolloProvider client={client}>
-        <Router>
-          <div className="flex-column justify-center align-center min-100-vh bg-primary">
+
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+          <UserProvider>
             <Header />
             <DeckMakerProvider>
               <ItemMakerProvider>
@@ -75,14 +76,14 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
                   <Route path="/items" element={<Items />} />
-                  <Route path="*" element={<Login />} />
+                  <Route path="/mat" element={<Login />} />
                 </Routes>
               </ItemMakerProvider>
             </DeckMakerProvider>
-          </div>
-        </Router>
-      </ApolloProvider>
-    </UserProvider>
+          </UserProvider>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
