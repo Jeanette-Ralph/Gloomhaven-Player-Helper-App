@@ -11,6 +11,7 @@ const useStyles = createUseStyles({
     "& li": {
       width: 175,
     },
+    listStyleType: "none",
   },
   wrapper: {
     borderTop: "black solid 1px",
