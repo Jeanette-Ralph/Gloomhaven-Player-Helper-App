@@ -45,10 +45,22 @@ const ResponsiveAppBar = () => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          display: { xs: "none", md: "flex", backgroundColor: "#0D0D0B" },
+          color: "#0D0D0B",
+          mr: 1,
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <AdbIcon
+              sx={{
+                display: { xs: "none", md: "flex", color: "#F2E0C9", svg: "" },
+                mr: 1,
+              }}
+            />
             <Typography
               variant="h6"
               noWrap
@@ -56,7 +68,7 @@ const ResponsiveAppBar = () => {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", md: "flex", color: "#F2E0C9" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
@@ -67,7 +79,12 @@ const ResponsiveAppBar = () => {
               LOGO
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none", color: "#F2E0C9" },
+              }}
+            >
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
@@ -83,7 +100,7 @@ const ResponsiveAppBar = () => {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  display: { xs: "block", md: "none", color: "#F2E0C9" },
                 }}
               >
                 {pages.map((page) => (
@@ -102,7 +119,7 @@ const ResponsiveAppBar = () => {
               href=""
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "none" },
+                display: { xs: "flex", md: "none", color: "#F2E0C9" },
                 flexGrow: 1,
                 fontFamily: "monospace",
                 fontWeight: 700,
@@ -113,7 +130,12 @@ const ResponsiveAppBar = () => {
             >
               LOGO
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex", color: "#F2E0C9" },
+              }}
+            >
               {Auth.loggedIn() ? (
                 <>
                   <Button
@@ -134,7 +156,7 @@ const ResponsiveAppBar = () => {
                   </Button>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, display: "block", color: "#F2E0C9" }}
                   >
                     {/* Logout */}
                     <Link className="text-dark" onClick={logout}>
@@ -146,7 +168,7 @@ const ResponsiveAppBar = () => {
                 <>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, display: "block", color: "#F2E0C9" }}
                   >
                     <Link className="text-dark" to="/login">
                       Login
@@ -154,7 +176,7 @@ const ResponsiveAppBar = () => {
                   </Button>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "#F2E0C9", display: "block" }}
                   >
                     {/* Sign Up */}
                     <Link className="text-dark" to="/signup">
