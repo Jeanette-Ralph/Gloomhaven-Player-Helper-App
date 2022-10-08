@@ -1,6 +1,8 @@
-# Gloomhaven Player Helper Application ![licence icon](https://img.shields.io/badge/License-MIT-lavender.svg)
+# Gloomhaven Player Helper Application
 
-## 📝 Table of Contents
+![Gloomhaven Header](https://res.cloudinary.com/dggvyhv27/image/upload/v1665226928/gloomhaven-user-app/My_project-1_h7xx6p.png)
+
+## 📝 Table of Contents ![licence icon](https://img.shields.io/badge/License-MIT-lavender.svg)
 
 - [License Utilized](#license-utilized)
 - [Project Details](#project-details)
