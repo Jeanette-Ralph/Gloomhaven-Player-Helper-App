@@ -25,10 +25,8 @@ class AuthService {
   }
 
   login(token) {
-    console.log("Starting Login Method----------");
     localStorage.setItem("id_token", token);
     var decoded = jwt_decode(token);
-    console.log("Decoded value:----", decoded.data._id);
     localStorage.setItem("user_id", decoded.data._id);
     window.location.assign("/mat?uid=" + token);
   }
