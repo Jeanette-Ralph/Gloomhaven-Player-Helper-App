@@ -19,7 +19,7 @@ export default function CardBuilder({ cards }) {
       {cards.map((card) => (
         <CardItems
           key={card.title}
-          image={<img src={card.image} />}
+          image={<img src={card.image} alt="" />}
           title={card.title}
         />
       ))}

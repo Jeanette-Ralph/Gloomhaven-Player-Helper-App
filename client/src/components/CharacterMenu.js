@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useQuery, gql } from "@apollo/client";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import { QUERY_CHARACTERS } from "../utils/queries";
 import { CharacterImage } from "./CharacterImage";
 import AddCharacter from "./AddCharacter";

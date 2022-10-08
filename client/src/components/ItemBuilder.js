@@ -1,5 +1,6 @@
 import React from "react";
 import ItemItems from "./ItemItems";
+import "animate.css";
 
 import { createUseStyles } from "react-jss";
 
@@ -7,8 +8,9 @@ const useStyles = createUseStyles({
   wrapper: {
     display: "flex",
     flexWrap: "wrap",
-    padding: [10, 50],
+    padding: [5, 30],
     justifyContent: "center",
+    animate__animated: "animate__fadeIn",
   },
 });
 
@@ -19,7 +21,7 @@ export default function ItemBuilder({ items }) {
       {items.map((item) => (
         <ItemItems
           key={item.title}
-          image={<img src={item.image} />}
+          image={<img src={item.image} alt="" />}
           title={item.title}
         />
       ))}
