@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    maxHeight: 50,
+    maxHeight: 300,
     "& li": {
       width: 175,
     },
