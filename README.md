@@ -18,8 +18,6 @@ MIT ![licence icon](https://img.shields.io/badge/License-MIT-lavender.svg)
 ## 🚀 Project Details
 
 Utilizing React, Express.js, Node.js, MongoDB, GraphQL, JWT, JSS, Beautiful DnD, and Material UI we developed a full stack application that will allow users to organize their player and item cards on a virtual player mat. This application allows for a more user friendly experince as it makes it easier to organize the players cards.
-![Deployed Application](client/images/deployed-app.png)
-[Deployed Application](https://banded-edge-364800.uw.r.appspot.com/)
 
 ## 👩‍💻 Usage Information
 
